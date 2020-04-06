@@ -4,4 +4,4 @@ Anggota Kelompok :
   2. Ajeung Angsaweni (1301180108)
   3. Delvanita Sri Wahyuni (1301184014)
   4. Komang Triolascarya (1301180055)
-  5.
+  5. Taufik
