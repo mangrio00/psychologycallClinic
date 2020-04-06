@@ -96,16 +96,24 @@
       <!-- isi form ini -->
       <form method="POST" action="#">
         <div class="form-group">
-          <label for="formGroupExampleInput">Nama </label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Jurusan" name="njurusan" required >
+          <label for="formGroupExampleInput">Nama Depan</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Depan" name="nama_depan" required >
         </div>
         <div class="form-group">
-          <label for="formGroupExampleInput">Nama </label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Fakultas" name="nfakultas"required>
+          <label for="formGroupExampleInput">Nama Belakang</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Belakang" name="nama_belakang"required>
         </div>
         <div class="form-group">
-          <label for="formGroupExampleInput2">Akreditasi</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Akreditasi" name="akreditasi" required>
+          <label for="formGroupExampleInput2">Email</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Tanggal Lahir</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Tanggal Lahir" name="dob" required>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">No HP</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="No HP" name="no_hp" required>
         </div>
       </div>
       <div class="modal-footer">
@@ -128,17 +136,25 @@
       <div class="modal-body">
       <!-- isi form ini -->
       <form method="POST" action="#">
-        <div class="form-group">
-          <label for="formGroupExampleInput">Nama </label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Jurusan" name="njurusan" required >
+      <div class="form-group">
+          <label for="formGroupExampleInput">Nama Depan</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Depan" name="nama_depan" required >
         </div>
         <div class="form-group">
-          <label for="formGroupExampleInput">Nama </label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Fakultas" name="nfakultas"required>
+          <label for="formGroupExampleInput">Nama Belakang</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Belakang" name="nama_belakang"required>
         </div>
         <div class="form-group">
-          <label for="formGroupExampleInput2">Akreditasi</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Akreditasi" name="akreditasi" required>
+          <label for="formGroupExampleInput2">Email</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Tanggal Lahir</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Tanggal Lahir" name="dob" required>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">No HP</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="No HP" name="no_hp" required>
         </div>
       </div>
       <div class="modal-footer">
