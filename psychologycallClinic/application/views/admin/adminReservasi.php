@@ -14,12 +14,7 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-fixed-top">
-    <div class="container">
-        <ul class="nav navbar-nav">
-        <li><a class="navbar-brand" href="#">PsychologyCall</a></li>
-        <li class="active"><a href="#">Konselor</a></li>
-        </ul>
+    
         <ul class="nav navbar-nav navbar-right text-center">
         <li class="dropdown pull-right">
             <a class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-user"></span> Admin
@@ -70,12 +65,6 @@
     </div>
     </center>
 
-    <div class="fixed-bottom">
-        <div class="copyright">
-        © 2020 Copyright Text : 
-        <a class="stretched-link right" href="http://localhost/psychologycallClinic/psychologycallClinic/"> PsychologyCallClinic</a>
-        </div>
-    </div>
     
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
