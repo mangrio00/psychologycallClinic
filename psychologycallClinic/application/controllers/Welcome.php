@@ -18,10 +18,47 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	//DEFAULT PAGE
 	public function index()
 	{
-		$this->load->view('template/header');
+		$this->load->view('template/headerDefault');
+		$this->load->view('default/home'); //page_home not yet
+		$this->load->view('template/footer');
+	}
+	public function konselor()
+	{
+		$this->load->view('template/headerDefault');
+		$this->load->view('default/konselor'); 
+		$this->load->view('template/footer');
+	}
+	
+	//ADMIN PAGE
+	public function adminPasien()
+	{
+		$this->load->view('template/headerAdmin');
 		$this->load->view('admin/adminPasien');
 		$this->load->view('template/footer');
 	}
+
+	public function adminKonselor()
+	{
+		$this->load->view('template/headerAdmin');
+		$this->load->view('admin/adminKonselor');
+		$this->load->view('template/footer');
+	}
+
+	public function adminReservasi()
+	{
+		$this->load->view('template/headerAdmin');
+		$this->load->view('admin/adminReservasi');
+		$this->load->view('template/footer');
+	}
+
+	//KONSELOR PAGE
+	// public function konselorReservasi()
+	// {
+	// 	$this->load->view('template/headerKonselor');
+	// 	$this->load->view('konselor/');
+	// 	$this->load->view('template/footer');
+	// }
 }
