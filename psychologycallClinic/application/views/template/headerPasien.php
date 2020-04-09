@@ -22,11 +22,11 @@
           <body>
           <ul class="nav navbar-nav navbar-right text-center">
           <li class="dropdown pull-right">
-              <a class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-user"></span> Konselor-Username
+              <a class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-user"></span> Pasien-Username
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Profile</a></li>
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">List Schedule</a></li>
+              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Make Reservation</a></li>
               <li class="dropdown-item"><a href="#">Log Out</a></li>
               </ul>
           </li>

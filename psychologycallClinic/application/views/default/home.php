@@ -8,6 +8,6 @@
 <body>
 <br>
 <br>
-    <h1>Selamat Datang COba </h1>
+    <h1>Selamat Datang Coba </h1>
 </body>
 </html>
