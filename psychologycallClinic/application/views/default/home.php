@@ -38,16 +38,16 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="images/home5.jpg" class="d-block w-100" alt="..." height="500px">
+          <img src="assets/images/home5.jpg" class="d-block w-100" alt="..." height="500px">
         </div>
         <div class="carousel-item">
-          <img src="images/home7.jpg" class="d-block w-100" alt="..." height="500px">
+          <img src="assets/images/home7.jpg" class="d-block w-100" alt="..." height="500px">
         </div>
         <div class="carousel-item">
-          <img src="images/home12.jpg" class="d-block w-100" alt="..." height="500px">
+          <img src="assets/images/home12.jpg" class="d-block w-100" alt="..." height="500px">
         </div>
         <div class="carousel-item">
-          <img src="images/home9.jpg" class="d-block w-100" alt="..." height="500px">
+          <img src="assets/images/home9.jpg" class="d-block w-100" alt="..." height="500px">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -63,7 +63,7 @@
     <!-- Introduction -->
     <div class="row" style="margin: 20px; color: gray; padding-top: 50px; padding-bottom: 50px;">
       <div class="col-sm-4">
-        <img src="images/dokter1.png" class="d-block w-100" alt="...">
+        <img src="assets/images/dokter1.png" class="d-block w-100" alt="...">
       </div>
       <div class="col-sm-8">
         <br>
@@ -79,7 +79,7 @@
     </div>
 
     <!-- Condition Treated -->
-    <div class="container-fluid" style="background-color: #C4C4C4; padding: 50px;">
+    <div class="container-fluid" style="background-color: #E8DACD; padding: 50px;">
       <div class="heading" style="color: #584F4F;">
         <h2 style="font-weight: normal;">Condition Treated</h2>
       </div>
@@ -116,24 +116,24 @@
       <center>
         <div class="row" style="margin: 20px; color: gray;">
           <div class="col-sm-4">
-            <img src="images/dokter10.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">
+            <img src="assets/images/dokter10.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">
           </div>
           <div class="col-sm-4">
-            <img src="images/dokter2.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">     
+            <img src="assets/images/dokter2.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">     
           </div>
           <div class="col-sm-4">
-            <img src="images/dokter4.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">      
+            <img src="assets/images/dokter4.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">      
           </div>
         </div>
         <div class="row" style="margin: 20px; color: gray;">
           <div class="col-sm-4">
-            <img src="images/dokter5.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">
+            <img src="assets/images/dokter5.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">
           </div>
           <div class="col-sm-4">
-            <img src="images/dokter9.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">    
+            <img src="assets/images/dokter9.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">    
           </div>
           <div class="col-sm-4">
-            <img src="images/dokter7.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">      
+            <img src="assets/images/dokter7.jpg" class="card-img-top rounded-circle" alt="..." style="height:200px; width:200px">      
           </div>
         </div>
       </center>
@@ -212,12 +212,12 @@
     </div> -->
 
     <!-- Contact Us -->
-    <div class="container-fluid" style="padding: 50px; background-color: #C4C4C4; color: #584F4F">
+    <div class="container-fluid" style="padding: 50px; background-color: #E8DACD; color: #584F4F">
       <div class="heading">
         <h2 style="font-weight: normal;">Contact Us</h2>
       </div>
       <div class="row">
-        <div class="col-sm-6" style="padding-top: 50px; padding-left: 30px;">
+        <div class="col-sm-6" style="padding-top: 30px;">
           <h6>Phone</h6>
           <p>021-3456 9876</p>
           <br>
