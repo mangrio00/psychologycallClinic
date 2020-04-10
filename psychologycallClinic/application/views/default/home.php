@@ -11,7 +11,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Psychology Call Clinic</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
             </li>
           </ul>
         </div>
-    </nav>
+    </nav> -->
 
     <!-- Carousel -->
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -263,10 +263,10 @@
     </div>
 
     <!-- Footer -->
-    <footer id="sticky-footer" class="py-2" style="background-color: black; color: gray;">
+    <!-- <footer id="sticky-footer" class="py-2" style="background-color: black; color: gray;">
       <div class="container text-center">
         <small>&copy; 2020 Copyright: Psychology Call Clinic</small>
       </div>
-    </footer>
+    </footer> -->
 </body>
 </html>
