@@ -10,25 +10,25 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Psychology Call Clinic</a>
+    
+    <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#f57b51;">
+        <a class="navbar-brand" href="#" style="color:white;">Psychology Call Clinic</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Counselor</a>
+            <a class="nav-item nav-link active" href="#" style="color:white;">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#" style="color:white;">Counselor</a>
           </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Log In</a>
+              <a class="nav-link" href="#" style="color:white;">Log In</a>
             </li>
             <li class="nav-item">
-              <button type="button" class="btn btn-outline-secondary">Sign Up</button>
+              <button type="button" class="btn btn-outline-light" style="color:white;">Sign Up</button>
             </li>
           </ul>
         </div>
@@ -137,12 +137,7 @@
           </div>
         </div>
       </center>
-      
     </div>
-
-
-
-
 
     <!-- <div class="container-fluid" style="background-color: #E8DACD; padding: 50px;">
       <div class="heading" style="color: #584F4F;">

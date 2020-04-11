@@ -25,7 +25,7 @@
   .btn {
     font-size: 18px;
   }
-  .fixed-bottom {
+  #sticky-footer {
     background-color:#f57b51;
     font-family: 'Libre Baskerville', serif;
     bottom: 0;
