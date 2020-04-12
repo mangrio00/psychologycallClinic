@@ -16,13 +16,13 @@
   <nav class="navbar navbar-fixed-top">
       <div class="container">
           <ul class="nav navbar-nav">
-          <li><a class="navbar-brand">PsychologyCall</a></li>
-          <li class="active"><a href="#">Konselor</a></li>
+          <li><a class="navbar-brand" style="color:white;">PsychologyCall</a></li>
+          <li class="active"><a href="#" style="color:white;">Konselor</a></li>
           </ul>
           <body>
           <ul class="nav navbar-nav navbar-right text-center">
           <li class="dropdown pull-right">
-              <a class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-user"></span> Pasien-Username
+              <a class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><span class="glyphicon glyphicon-user"></span> Pasien-Username
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Profile</a></li>

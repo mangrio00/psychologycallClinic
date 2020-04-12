@@ -13,16 +13,28 @@
   <title>PsychologicalCall</title>
 
   </head>
-  <nav class="navbar fixed-top">
-      <div class="container">
-          <ul class="nav navbar-nav">
-          <li><a class="navbar-brand" href="<?= base_url(); ?>welcome/">PsychologyCall</a></li>
-          <li class="active"><a href="<?= base_url(); ?>welcome/konselor">Konselor</a></li>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" >
+  <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color:white;">Psychology Call Clinic</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="#" style="color:white;">Home</a>
+            <a class="nav-link active" href="#" style="color:white;">Counselor</a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+            <button type="button" class="btn btn-outline-light btn-sm"><a class="nav-link active" href="#" style="color:white;">Log In</a></button>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-outline-light btn-sm"><a class="nav-link active" href="#" style="color:white;">Sign Up</a></button>
+            </li>
           </ul>
-          <body>
-          <ul class="nav navbar-nav navbar-right text-center">
-              <li class="active"><a href="<?= base_url(); ?>welcome/">Login</a></li>
-              <li class="active"><a href="<?= base_url(); ?>welcome/">SignUp</a></li> 
-          </ul>
-    </div>
-  </nav>
+        </div>
+        </div>
+    </nav>
