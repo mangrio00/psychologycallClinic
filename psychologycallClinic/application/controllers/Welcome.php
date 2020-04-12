@@ -55,10 +55,18 @@ class Welcome extends CI_Controller {
 	}
 
 	//KONSELOR PAGE
-	// public function konselorReservasi()
-	// {
-	// 	$this->load->view('template/headerKonselor');
-	// 	$this->load->view('konselor/');
-	// 	$this->load->view('template/footer');
-	// }
+	public function konselorReservasi()
+	{
+		$this->load->view('template/headerKonselor');
+		$this->load->view('konselor/konselorReservasi');
+		$this->load->view('template/footer');
+	}
+
+	//PROFILE   
+	public function profileKonselor()
+	{
+		$this->load->view('template/headerKonselor');
+		$this->load->view('konselor/profileKonselor');
+		$this->load->view('template/footer');
+	}
 }

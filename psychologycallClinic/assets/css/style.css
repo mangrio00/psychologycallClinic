@@ -45,6 +45,12 @@
     background-color: #fff;
     position: relative;
   }
+  
+  /* Konseler CSS*/
+   #containerKonselor{
+    background-color: #fff;
+    position: relative;
+  }
   .instruksiSearch{
       float: right;
   }

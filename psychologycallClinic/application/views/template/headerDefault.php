@@ -17,7 +17,7 @@
       <div class="container">
           <ul class="nav navbar-nav">
           <li><a class="navbar-brand" href="<?= base_url(); ?>welcome/">PsychologyCall</a></li>
-          <li class="active"><a href="<?= base_url(); ?>welcome/konselor">Konselor</a></li>
+          <li class="active"><a href="<?= base_url(); ?>welcome/">Konselor</a></li>
           </ul>
           <body>
           <ul class="nav navbar-nav navbar-right text-center">
