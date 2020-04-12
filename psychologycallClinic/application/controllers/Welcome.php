@@ -35,7 +35,7 @@ class Welcome extends CI_Controller {
 	//ADMIN PAGE
 	public function adminPasien()
 	{
-		$this->load->view('template/headerPasien');
+		$this->load->view('template/headerAdmin');
 		$this->load->view('admin/adminPasien');
 		$this->load->view('template/footer');
 	}
