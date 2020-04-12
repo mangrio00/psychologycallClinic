@@ -13,7 +13,7 @@
   <title>PsychologicalCall</title>
 
   </head>
-  <nav class="navbar navbar-fixed-top">
+  <nav class="navbar fixed-top">
       <div class="container">
           <ul class="nav navbar-nav">
           <li><a class="navbar-brand" href="<?= base_url(); ?>welcome/">PsychologyCall</a></li>
