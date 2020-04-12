@@ -33,10 +33,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-            <button type="button" class="btn btn-outline-light btn-sm"><a class="nav-link active" href="#" style="color:white;">Log In</a></button>
+              <button type="button" class="btn btn-sm"><a class="nav-link active" href="#" style="color:white;">Log In</a></button>
             </li>
             <li class="nav-item">
-              <button type="button" class="btn btn-outline-light btn-sm"><a class="nav-link active" href="#" style="color:white;">Sign Up</a></button>
+              <button type="button" class="btn btn-outline-light btn-sm"><a class="nav-link active" href="#">Sign Up</a></button>
             </li>
           </ul>
         </div>
