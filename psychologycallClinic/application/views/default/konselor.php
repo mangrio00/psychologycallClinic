@@ -17,6 +17,8 @@
 </style>
 <body>
     <center>
+      <br>
+      <br>
         <h1>Doctor's Schedule</h1>
         <br>
         <table class="table table-hover" style="width: 1000px;">
