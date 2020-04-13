@@ -21,6 +21,10 @@ class Welcome extends CI_Controller {
 	//DEFAULT PAGE
 	public function index()
 	{
+<<<<<<< HEAD
+		$this->load->view('template/header');
+		$this->load->view('admin/adminKonselor');
+=======
 		$this->load->view('template/headerDefault');
 		$this->load->view('default/home'); //page_home not yet
 		$this->load->view('template/footer');
@@ -37,6 +41,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('template/headerAdmin');
 		$this->load->view('admin/adminPasien');
+>>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579
 		$this->load->view('template/footer');
 	}
 
