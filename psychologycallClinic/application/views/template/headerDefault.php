@@ -26,7 +26,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="<?= base_url(); ?>welcome/index" style="color:white;">Home</a>
+            <a class="nav-link active" href="#" style="color:white;">Home</a>
             <a class="nav-link active" href="<?= base_url(); ?>welcome/konselor" style="color:white;">Counselor</a>
           </div>
         </div>
