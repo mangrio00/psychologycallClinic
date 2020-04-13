@@ -14,9 +14,9 @@
 
   </head>
   <body>
-<nav class="navbar navbar-fixed-top">
+<nav class="navbar navbar-fixed-top" style="background-color: #6b5e51; color: white;">
     <div class="container">
         <ul class="nav navbar-nav">
-        <li><a class="navbar-brand" href="#">PsychologyCall</a></li>
+        <li><a class="navbar-brand" href="<?= base_url(); ?>" style="color:white;">PsychologyCall</a></li>
         </ul>
 </nav>

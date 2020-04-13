@@ -6,9 +6,9 @@
 
     </div> -->
 
-    <footer id="sticky-footer" class="py-2" style="background-color: #f57b51; color: white;">
+    <footer id="sticky-footer" class="py-2" style="background-color: #6b5e51; color: white;">
       <div class="container text-center">
-        <small>&copy; 2020 Copyright Text <a class="stretched-link right" href="http://localhost/psychologycallClinic/psychologycallClinic/"> PsychologyCallClinic</a></small>
+        <small>&copy; 2020 Copyright Text <a class="stretched-link right" href="<?= base_url(); ?>"> PsychologyCallClinic</a></small>
       </div>
     </footer>
     <!-- Optional JavaScript -->

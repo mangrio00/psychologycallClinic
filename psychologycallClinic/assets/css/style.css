@@ -1,5 +1,4 @@
   .navbar {
-    background-color:#f57b51;
     font-family: 'Libre Baskerville', serif;
     }
   .navbar .navbar-brand {
@@ -17,15 +16,13 @@
   }
   .navbar .navbar-nav > a:hover,
   .navbar .navbar-nav > a:focus {
-    background-color: #ffa41b;
-    color: #fff;
+    background-color: #6b5e51;
     
   }
   .active {
     font-size: 18px;
   }
   #sticky-footer {
-    background-color:#f57b51;
     font-family: 'Libre Baskerville', serif;
     bottom: 0;
     width: 100%;

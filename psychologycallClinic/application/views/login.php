@@ -22,7 +22,7 @@
 				<div class="card-body">
 					
 					<?php 
-						echo form_open(base_url('welcome/register'), ['class' => 'form-psycho']);
+						echo form_open(base_url('welcome/login'), ['class' => 'form-psycho']);
 					?>
 
 					
@@ -55,7 +55,7 @@
 					</div>
 
 					<?php
-						echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Register');
+						echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Login');
 
 						echo form_close();
 					?>

@@ -22,8 +22,8 @@
                 <td class="text-center" scope="col">Username</td>
                 <td class="text-center" scope="col">Password</td>
                 <td class="text-center" scope="col">Email</td>
-                <td class="text-center" scope="col">Tanggal Lahir</td>
-                <td class="text-center" scope="col">No Hp</td>
+                <td class="text-center" scope="col">DOB</td>
+                <td class="text-center" scope="col">Phone</td>
                 <td class="text-center" scope="col">Action</td>
             </tr>
         </thead>

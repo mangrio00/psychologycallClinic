@@ -13,11 +13,11 @@
   <title>PsychologicalCall</title>
 
   </head>
-  <nav class="navbar navbar-fixed-top">
+  <nav class="navbar navbar-fixed-top" style="background-color: #6b5e51; color: white;">
       <div class="container">
           <ul class="nav navbar-nav">
           <li><a class="navbar-brand" style="color:white;">PsychologyCall</a></li>
-          <li class="active" ><a href="#" style="color:white;">Konselor</a></li>
+          <li class="active" ><a href="#" style="color:white;">Counselor</a></li>
           </ul>
           <body>
           <ul class="nav navbar-nav navbar-right text-center">
@@ -26,7 +26,7 @@
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Account</a></li>
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">List Schedule</a></li>
+              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Schedule</a></li>
               <li class="dropdown-item"><a href="#">Log Out</a></li>
               </ul>
           </li>

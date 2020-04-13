@@ -18,7 +18,7 @@
 
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#f57b51;">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#6b5e51;">
   <div class="container-fluid">
         <a class="navbar-brand" href="#" style="color:white;">Psychology Call Clinic</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

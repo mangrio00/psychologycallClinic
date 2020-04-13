@@ -13,11 +13,11 @@
             <thead>
                 <tr style="font-weight:bold;">
                     <td class="text-center" scope="col">#</td>
-                    <td class="text-center" scope="col">Nama Pasien</td>
-                    <td class="text-center" scope="col">Tanggal Reservasi</td>
-                    <td class="text-center" scope="col">Nama Konselor</td>
+                    <td class="text-center" scope="col">Patient Name</td>
+                    <td class="text-center" scope="col">Reservation Date</td>
+                    <td class="text-center" scope="col">Counselor Name</td>
                     <td class="text-center" scope="col">Role</td>
-                    <td class="text-center" scope="col">Status Reservasi</td>
+                    <td class="text-center" scope="col">Status </td>
                 </tr>
             </thead>
             <tbody>
