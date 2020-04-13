@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-4">
 	<div class="row">
 		<div class="col-md-6">
 			<h2>Psychologycall-Clinic</h2>
@@ -7,8 +7,8 @@
 			<div class="akses-button">
 				<?php 
 				$dataAnchor = ['class' => 'btn btn-outline-primary'];
-				echo anchor('user/login', 'LOGIN', $dataAnchor);
-				echo anchor('user/register', 'REGISTER', $dataAnchor);
+				echo anchor('welcome/login', 'LOGIN', $dataAnchor);
+				echo anchor('welcome/register', 'REGISTER', $dataAnchor);
 
 				?>
 			</div>
@@ -22,7 +22,7 @@
 				<div class="card-body">
 					
 					<?php 
-						echo form_open(base_url('user/prosesRegister'), ['class' => 'form-psycho']);
+						echo form_open(base_url('welcome/register'), ['class' => 'form-psycho']);
 					?>
 
 					

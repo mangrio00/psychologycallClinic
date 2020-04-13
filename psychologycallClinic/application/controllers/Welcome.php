@@ -21,10 +21,6 @@ class Welcome extends CI_Controller {
 	//DEFAULT PAGE
 	public function index()
 	{
-<<<<<<< HEAD
-		$this->load->view('template/header');
-		$this->load->view('admin/adminKonselor');
-=======
 		$this->load->view('template/headerDefault');
 		$this->load->view('default/home'); //page_home not yet
 		$this->load->view('template/footer');
@@ -35,13 +31,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('default/konselor'); 
 		$this->load->view('template/footer');
 	}
+	public function login()
+	{
+		$this->load->view('template/header2');
+		$this->load->view('login'); 
+	}
+	public function register()
+	{
+		$this->load->view('template/header2');
+		$this->load->view('register'); 
+	}
 	
 	//ADMIN PAGE
 	public function adminPasien()
 	{
 		$this->load->view('template/headerAdmin');
 		$this->load->view('admin/adminPasien');
->>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579
 		$this->load->view('template/footer');
 	}
 
@@ -60,10 +65,10 @@ class Welcome extends CI_Controller {
 	}
 
 	//KONSELOR PAGE
-	// public function konselorReservasi()
-	// {
-	// 	$this->load->view('template/headerKonselor');
-	// 	$this->load->view('konselor/');
-	// 	$this->load->view('template/footer');
-	// }
+	public function konselorReservasi()
+	{
+		$this->load->view('template/headerKonselor');
+		$this->load->view('konselor/konselorReservasi');
+		$this->load->view('template/footer');
+	}
 }

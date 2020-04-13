@@ -1,30 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PsychologicalCall</title>
-</head>
-<body>
-<nav class="navbar navbar-fixed-top">
-    <div class="container">
-        <ul class="nav navbar-nav">
-        <li><a class="navbar-brand" href="#">PsychologyCall</a></li>
-        <li class="active"><a href="#">Counselor</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right text-center">
-        <li class="dropdown pull-right">
-            <a class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-user"></span> Profile
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="#">Account</a></li>
-            <li class="dropdown-item"><a href="#">List Counselor</a></li>
-            <li class="dropdown-item"><a href="#">Log Out</a></li>
-            </ul>
-        </li>
-        </ul>
-    </div>
-  </nav>
   <center>
     <div class="container" id="containerKonselor">
     <h1 style= margin-top:70px;> PROFILE COUNSELOR</h1><br><br>
@@ -72,5 +45,3 @@
       </div>
       </form>
   </center>
-</body>
-</html>

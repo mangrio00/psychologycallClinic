@@ -25,7 +25,7 @@
               <a class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><span class="glyphicon glyphicon-user"></span> Konselor-Username
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Profile</a></li>
+              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Account</a></li>
               <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">List Schedule</a></li>
               <li class="dropdown-item"><a href="#">Log Out</a></li>
               </ul>

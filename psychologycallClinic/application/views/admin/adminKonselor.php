@@ -1,21 +1,4 @@
 
-<<<<<<< HEAD
-        <ul class="nav navbar-nav navbar-right text-center">
-        <li class="dropdown pull-right">
-            <a class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-user"></span> Admin
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="#">Kelola Konselor</a></li>
-            <li class="dropdown-item"><a href="#">Kelola Pasien</a></li>
-            <li class="dropdown-item"><a href="#">List Reservasi</a></li>
-            <li class="dropdown-item"><a href="#">Log Out</a></li>
-            </ul>
-        </li>
-        </ul>
-    </div>
-    </nav>
-=======
->>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579
 <!-- ISI WEB -->
 <center>
 <div class="container" id="containerAdmin">
@@ -161,7 +144,3 @@
 
 <!-- BATAS ISI WEB -->
       
-<<<<<<< HEAD
-=======
-    
->>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579
