@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
         <ul class="nav navbar-nav navbar-right text-center">
         <li class="dropdown pull-right">
             <a class="dropdown-toggle" data-toggle="dropdown" ><span class="glyphicon glyphicon-user"></span> Admin
@@ -13,6 +14,8 @@
         </ul>
     </div>
     </nav>
+=======
+>>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579
 <!-- ISI WEB -->
 <center>
 <div class="container" id="containerAdmin">
@@ -158,3 +161,7 @@
 
 <!-- BATAS ISI WEB -->
       
+<<<<<<< HEAD
+=======
+    
+>>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579

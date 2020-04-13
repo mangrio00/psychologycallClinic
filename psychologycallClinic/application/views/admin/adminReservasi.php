@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     
         <ul class="nav navbar-nav navbar-right text-center">
         <li class="dropdown pull-right">
@@ -14,6 +15,10 @@
     </div>
     </nav>
     <center>
+=======
+ <!-- ISI WEB -->
+   <center>
+>>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579
     <div class="container" id="containerAdmin">
         <h1 style= margin-top:70px;> Data Reservasi PsychologyCallClinic </h1><br><br>
         <div class="instruksiSearch">
@@ -41,6 +46,7 @@
                     <td class="text-center"></td>
                     <td class="text-center"></td>
                     <td class="text-center"></td>
+                    <td class="text-center"></td>
                 </tr>
             </tbody>
         </table>
@@ -48,4 +54,7 @@
         </div>
     </div>
     </center>
+<<<<<<< HEAD
     
+=======
+>>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579

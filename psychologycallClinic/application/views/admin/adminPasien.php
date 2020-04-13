@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
         <ul class="nav navbar-nav navbar-right text-center">
         <li class="dropdown pull-right">
@@ -13,6 +14,8 @@
         </ul>
     </div>
     </nav>
+=======
+>>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579
 <!-- ISI WEB -->
 <center>
 <div class="container" id="containerAdmin">
@@ -144,3 +147,9 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+
+<!-- BATAS ISI WEB -->
+    
+>>>>>>> d964e46b6dfa118ec4eae69842a603c5cc4eb579
