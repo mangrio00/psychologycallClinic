@@ -62,7 +62,10 @@ class User extends CI_Controller
 			'username' => $this->input->post('username', true),
 			'password' => $this->input->post('password', true)
 		];
-		$cekPasien = $this->User_model->getDatabyUsername($user);
+		$cekPasien = $this->User_model->getPasienbyUsername($user);
+		$cekAdmin = $this->User_model->getAdminbyUsername($user);
+		$cekKonselor = $this->User_model->getKonselorbyUsername($user);
+
 		if ($cekPasien) {
 			if (password_verify($user['password'], $cekPasien['password'])) {
 				$data = [
@@ -71,6 +74,30 @@ class User extends CI_Controller
 				];
 				$this->session->set_userdata($data);
 				redirect('PasienC');
+			} else {
+				$this->session->set_flashdata('flash', 'Password Salah');
+				redirect('user/login');
+			}
+		} else if ($cekAdmin) {
+			if ($user['password'] == $cekAdmin['password']) {
+				$data = [
+					'username' => $cekAdmin['username'],
+					'id_level' => $cekAdmin['id_level']
+				];
+				$this->session->set_userdata($data);
+				redirect('AdminC/adminKonselor');
+			} else {
+				$this->session->set_flashdata('flash', 'Password Salah');
+				redirect('user/login');
+			}
+		} else if ($cekKonselor) {
+			if ($user['password'] == $cekKonselor['password']) {
+				$data = [
+					'username' => $cekKonselor['username'],
+					'id_level' => $cekKonselor['id_level']
+				];
+				$this->session->set_userdata($data);
+				redirect('KonselorC');
 			} else {
 				$this->session->set_flashdata('flash', 'Password Salah');
 				redirect('user/login');
