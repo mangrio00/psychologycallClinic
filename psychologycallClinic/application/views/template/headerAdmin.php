@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -12,25 +13,26 @@
   <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style.css">
   <title>PsychologicalCall</title>
 
-  </head>
-  <nav class="navbar navbar-fixed-top" style="background-color: #6b5e51; color: white;">
-      <div class="container">
-          <ul class="nav navbar-nav">
-          <li><a class="navbar-brand" style="color:white;">PsychologyCall</a></li>
-          <li class="active"><a href="#" style="color:white;">Counselor</a></li>
+</head>
+<nav class="navbar navbar-fixed-top" style="background-color: #6b5e51; color: white;">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><a class="navbar-brand" style="color:white;">PsychologyCall</a></li>
+      <li class="active"><a href="#" style="color:white;">Counselor</a></li>
+    </ul>
+
+    <body>
+      <ul class="nav navbar-nav navbar-right text-center">
+        <li class="dropdown pull-right">
+          <a class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><span class="glyphicon glyphicon-user"></span> Admin
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="<?= base_url(); ?>AdminC/adminKonselor">Manage Counselor</a></li>
+            <li class="dropdown-item"><a href="<?= base_url(); ?>AdminC/adminPasien">Manage Patient</a></li>
+            <li class="dropdown-item"><a href="<?= base_url(); ?>AdminC/adminReservasi">Reservation List</a></li>
+            <li class="dropdown-item"><a href="#">Log Out</a></li>
           </ul>
-          <body>
-          <ul class="nav navbar-nav navbar-right text-center">
-          <li class="dropdown pull-right">
-              <a class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><span class="glyphicon glyphicon-user"></span> Admin
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/adminKonselor">Manage Counselor</a></li>
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/adminPasien">Manage Patient</a></li>
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/adminReservasi">Reservation List</a></li>
-              <li class="dropdown-item"><a href="#">Log Out</a></li>
-              </ul>
-          </li>
-          </ul>
-    </div>
-  </nav>
+        </li>
+      </ul>
+  </div>
+</nav>
