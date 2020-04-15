@@ -11,6 +11,11 @@ class Admin_model extends CI_model
         return $this->db->get('konselor')->result_array();
     }
 
+    public function get_konselorbyId($id)
+    {
+        return $this->db->get_where('konselor', ['id_konselor' => $id])->row_array();
+    }
+
     public function cariDataKonselor()
     {
         $keyword = $this->input->post('keyword', true);
@@ -22,5 +27,17 @@ class Admin_model extends CI_model
         $this->db->or_like('speciality', $keyword);
         $this->db->or_like('capacity', $keyword);
         return $this->db->get('konselor')->result_array();
+    }
+
+    public function hapus_konselor($id)
+    {
+        $this->db->where('id_konselor', $id);
+        $this->db->delete('konselor');
+    }
+
+    public function edit_konselor($id, $data)
+    {
+        $this->db->where('id_konselor', $id);
+        return $this->db->update('konselor', $data);
     }
 }
