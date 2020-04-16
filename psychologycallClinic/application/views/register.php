@@ -78,10 +78,11 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="dob" class="col-3">Tanggal Lahir (yyyy-mm-dd)</label>
+						<label for="dob" class="col-3">Tanggal Lahir</label>
 						<div class="col-9">
 							<?php
 							$data = [
+								'type' => 'date',
 								'name' => 'dob',
 								'id' => 'dob',
 								'class' => 'form-control',

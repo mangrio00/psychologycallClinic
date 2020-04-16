@@ -12,15 +12,20 @@
         </form>
       </div>
     </span><br><br>
-    <div class="viewTable">
-      <?php if ($this->session->flashdata('flash')) { ?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <?= $this->session->flashdata('flash'); ?>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!-- flashdata masih bermasalah -->
+    <?php if ($this->session->flashdata('flash')) : ?>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= $this->session->flashdata('flash'); ?>.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         </div>
-      <?php } ?>
+      </div>
+    <?php endif; ?>
+    <div class="viewTable">
       <table class="table">
         <thead>
           <tr style="font-weight:bold;">
@@ -43,7 +48,13 @@
               <td class="text-center"><?= $i++ ?></td>
               <td class="text-center"><?= $k['fullname']; ?></td>
               <td class="text-center"><?= $k['username']; ?></td>
-              <td class="text-center"><?= $k['password']; ?></td>
+              <td class="text-center">
+                <?php if ($k['password'] == '123456') {
+                  echo $k['password'];
+                } else {
+                  echo substr($k['password'], 0, 6) . '...';
+                } ?>
+              </td>
               <td class="text-center"><?= $k['email']; ?></td>
               <td class="text-center"><?= $k['role']; ?></td>
               <td class="text-center"><?= $k['schedule']; ?></td>

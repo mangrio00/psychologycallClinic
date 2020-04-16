@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2020 at 03:48 PM
+-- Generation Time: Apr 16, 2020 at 11:36 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -66,8 +66,7 @@ CREATE TABLE `konselor` (
 --
 
 INSERT INTO `konselor` (`id_konselor`, `fullname`, `username`, `password`, `email`, `role`, `schedule`, `speciality`, `capacity`, `id_level`) VALUES
-(2, 'Almassyifa', 'hnskym', '123456', 'hnskym@gmail.com', 'Psychologist', 'Senin, Selasa, Rabu', 'OCD, Mental Illness', 5, 3),
-(3, 'Hauranda Aqilah', 'adekk', '123456', 'hauranda@gmail.com', 'Counselor', 'Senin, Selasa, Rabu, Kamis', 'Goal Setting', 10, 3);
+(9, 'Ghina Khoerunnisa', 'abc', '123456', 'kkjgnisa@gmail.com', 'Psychiatrist', 'Selasa, Rabu', 'OCD, Mental Illness', 5, 3);
 
 -- --------------------------------------------------------
 
@@ -93,7 +92,8 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`id_pasien`, `firstname`, `lastname`, `email`, `dob`, `phone`, `gender`, `username`, `password`, `id_level`) VALUES
-(8, 'Ghina', 'Khoerunnisa', 'gkhoerunnisa@gmail.com', '2000-03-26', '085279630592', 'Wanita', 'aymrei14', '$2y$10$vpYO4zWLXlxEeCBxJnRhG.m90VvmqiYxmD.anR2GnRIYTZUB5NJzy', 2);
+(8, 'Ghina', 'Khoe', 'gkhoerunnisa@gmail.com', '2000-03-26', '085279630592', 'Wanita', 'aymrei14', '$2y$10$vpYO4zWLXlxEeCBxJnRhG.m90VvmqiYxmD.anR2GnRIYTZUB5NJzy', 2),
+(9, 'Tasya', 'Desiani', 'tasyadesiani@gmail.com', '2000-07-27', '085279990765', 'Wanita', 'NekwTo', '654321', 2);
 
 -- --------------------------------------------------------
 
@@ -157,13 +157,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `konselor`
 --
 ALTER TABLE `konselor`
-  MODIFY `id_konselor` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_konselor` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id_pasien` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pasien` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `user`

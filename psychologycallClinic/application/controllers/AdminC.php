@@ -7,21 +7,26 @@ class AdminC extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Admin_model');
+        $this->load->model('Konselor_model');
+        $this->load->model('Pasien_model');
         $this->load->library('form_validation');
     }
     public function adminPasien()
     {
+        $data['pasien'] = $this->Pasien_model->get_pasien();
+        if ($this->input->post('keyword')) {
+            $data['pasien'] = $this->Pasien_model->cariDataPasien();
+        }
         $this->load->view('template/headerAdmin');
-        $this->load->view('admin/adminPasien');
+        $this->load->view('admin/adminPasien', $data);
         $this->load->view('template/footer');
     }
 
     public function adminKonselor()
     {
-        $data['konselor'] = $this->Admin_model->get_konselor();
+        $data['konselor'] = $this->Konselor_model->get_konselor();
         if ($this->input->post('keyword')) {
-            $data['konselor'] = $this->Admin_model->cariDataKonselor();
+            $data['konselor'] = $this->Konselor_model->cariDataKonselor();
         }
         $this->load->view('template/headerAdmin');
         $this->load->view('admin/adminKonselor', $data);
@@ -60,26 +65,26 @@ class AdminC extends CI_Controller
                 'capacity' => $this->input->post('capacity'),
                 'id_level' => 3
             ];
-            $this->Admin_model->tambah_konselor($data);
+            $this->Konselor_model->tambah_konselor($data);
             redirect('AdminC/adminKonselor');
         }
     }
 
     public function hapusKonselor($id)
     {
-        $this->Admin_model->hapus_konselor($id);
+        $this->Konselor_model->hapus_konselor($id);
         $this->session->set_flashdata('flash', 'Data Berhasil Dihapus');
         redirect('AdminC/adminKonselor');
     }
 
     public function editKonselor($id)
     {
-        $data['konselor'] = $this->Admin_model->get_konselorbyId($id);
-        $data['role'] = ['Counselor', 'Psychologist', 'Psychiatrist	'];
+        $data['konselor'] = $this->Konselor_model->get_konselorbyId($id);
+        $data['role'] = ['Counselor', 'Psychologist', 'Psychiatrist'];
 
         $this->form_validation->set_rules('fullname', 'Full Name', 'required|trim');
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[konselor.username]');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[konselor.email]');
+        $this->form_validation->set_rules('username', 'Username', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
         $this->form_validation->set_rules('role', 'Role', 'required|trim');
         $this->form_validation->set_rules('schedule[]', 'Schedule', 'required|trim');
         $this->form_validation->set_rules('speciality', 'Speciality', 'required|trim');
@@ -98,10 +103,74 @@ class AdminC extends CI_Controller
                 'schedule' => (implode(', ', $this->input->post('schedule'))),
                 'speciality' => $this->input->post('speciality'),
                 'capacity' => $this->input->post('capacity'),
-                'id_level' => 3
             ];
-            $this->Admin_model->edit_konselor($id, $data);
+            $this->Konselor_model->edit_konselor($id, $data);
             redirect('AdminC/adminKonselor');
+        }
+    }
+    //ADMINPASIEN
+    public function tambahPasien()
+    {
+        $this->form_validation->set_rules('firstname', 'First Name', 'required|trim');
+        $this->form_validation->set_rules('lastname', 'Last Name', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[konselor.email]');
+        $this->form_validation->set_rules('dob', 'DOB', 'required|trim');
+        $this->form_validation->set_rules('phone', 'Phone', 'required|trim');
+        $this->form_validation->set_rules('gender', 'Gender', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('template/headerAdmin');
+            $this->load->view('admin/tambahAdminPasien');
+        } else {
+            $data = [
+                'firstname' => $this->input->post('firstname'),
+                'lastname' => $this->input->post('lastname'),
+                'email' => $this->input->post('email'),
+                'dob' => $this->input->post('dob'),
+                'phone' => $this->input->post('phone'),
+                'gender' => $this->input->post('gender'),
+                'username' => random_string('alpha', 6),
+                'password' => 654321,
+                'id_level' => 2
+            ];
+            $this->Pasien_model->tambah_pasien($data);
+            redirect('AdminC/adminPasien');
+        }
+    }
+
+    public function hapusPasien($id)
+    {
+        $this->Pasien_model->hapus_pasien($id);
+        $this->session->set_flashdata('flash', 'Data Berhasil Dihapus');
+        redirect('AdminC/adminPasien');
+    }
+
+    public function editPasien($id)
+    {
+        $data['pasien'] = $this->Pasien_model->get_pasienbyId($id);
+
+        $this->form_validation->set_rules('firstname', 'First Name', 'required|trim');
+        $this->form_validation->set_rules('lastname', 'Last Name', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('dob', 'DOB', 'required|trim');
+        $this->form_validation->set_rules('phone', 'Phone', 'required|trim');
+        $this->form_validation->set_rules('gender', 'Gender', 'required|trim');
+
+        if ($this->form_validation->run() == false) {
+
+            $this->load->view('template/headerAdmin');
+            $this->load->view('admin/editAdminPasien', $data);
+        } else {
+            $data = [
+                'firstname' => $this->input->post('firstname'),
+                'lastname' => $this->input->post('lastname'),
+                'email' => $this->input->post('email'),
+                'dob' => $this->input->post('dob'),
+                'phone' => $this->input->post('phone'),
+                'gender' => $this->input->post('gender'),
+            ];
+            $this->Pasien_model->edit_pasien($id, $data);
+            redirect('AdminC/adminPasien');
         }
     }
 }

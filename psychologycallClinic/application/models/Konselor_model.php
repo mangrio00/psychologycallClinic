@@ -1,5 +1,5 @@
 <?php
-class Admin_model extends CI_model
+class Konselor_model extends CI_model
 {
     public function tambah_konselor($data)
     {

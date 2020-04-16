@@ -6,7 +6,7 @@
                     <br><br>
                     <br>
                     <div class="card-header text-center mt-3">
-                        <h2>TAMBAH DATA KONSELOR</h2>
+                        <h2>EDIT DATA KONSELOR</h2>
                     </div>
                     <br>
                     <div class="card-body" style="width: 500px;background-color:white;padding:3rem">
@@ -15,17 +15,17 @@
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('fullname'); ?></small>
                                 <label for="fullname">Full Name </label>
-                                <input type="text" class="form-control" id="fullname" placeholder="Full Name" name="fullname" value="<?= $konselor['fullname'] ?>" required>
+                                <input type="text" class="form-control" id="fullname" placeholder="Full Name" name="fullname" value="<?= $konselor['fullname'] ?>">
                             </div>
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('username'); ?></small>
                                 <label for="username">Username </label>
-                                <input type="text" class="form-control" id="username" placeholder="Username" name="username" value="<?= $konselor['username'] ?>" required>
+                                <input type="text" class="form-control" id="username" placeholder="Username" name="username" value="<?= $konselor['username'] ?>">
                             </div>
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('email'); ?></small>
                                 <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" placeholder="Email" name="email" value="<?= $konselor['email'] ?>" required>
+                                <input type="text" class="form-control" id="email" placeholder="Email" name="email" value="<?= $konselor['email'] ?>" readonly>
                             </div>
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('role'); ?></small>
@@ -49,7 +49,7 @@
                                     <input type="checkbox" name="schedule[]" id="schedule" value="Selasa">Selasa
                                 </label>
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="schedule[]" id="schedule" value="Rabu">Rabu
+                                    <input type="checkbox" name="schedule[]" id="schedule" value="Rabu"> Rabu
                                 </label>
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="schedule[]" id="schedule" value="Kamis">Kamis
@@ -61,12 +61,12 @@
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('speciality'); ?></small>
                                 <label for="speciality">Speciality </label>
-                                <input type="text" class="form-control" id="speciality" placeholder="Speciality" name="speciality" required>
+                                <input type="text" class="form-control" id="speciality" placeholder="Speciality" name="speciality" value="<?= $konselor['speciality'] ?>">
                             </div>
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('capacity'); ?></small>
                                 <label for="capacity">Capacity </label>
-                                <input type="text" class="form-control" id="capacity" placeholder="Capacity" name="capacity" required>
+                                <input type="text" class="form-control" id="capacity" placeholder="Capacity" name="capacity" value="<?= $konselor['capacity'] ?>">
                             </div>
                             <div class="footer">
                                 <a class="btn btn-success btn-sm" href="<?= base_url(); ?>AdminC/adminKonselor">Back</a>
