@@ -12,7 +12,6 @@
     html,body{
         padding-top: 20px;
         width: 100%;
-        color: #584F4F;
     }
 </style>
 <body>
@@ -22,7 +21,7 @@
         <h1>Doctor's Schedule</h1>
         <br>
         <table class="table table-hover" style="width: 1000px;">
-            <thead style="background-color: #f57b51;">
+            <thead style="background-color: #6b5e51; color:white;">
                 <th scope="col">Doctor's Name</th>
                 <th scope="col">Specialist</th>
                 <th scope="col">Day</th>
