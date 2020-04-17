@@ -1,13 +1,15 @@
 <div class="container mt-4">
-	<div class="row">
+	<div class="row h-75 align-items-center">
 		<div class="col-md-6">
-			<h2>Psychologycall-Clinic</h2>
-			<h3>Pusat Konsultasi Psikologi Terbaik se-Indonesia</h3>
+			<h2 class="title-register">Psychologycall-Clinic</h2>
+			<h3 class="title-register">Pusat Konsultasi Psikologi Terbaik se-Indonesia</h3>
 
 			<div class="akses-button">
 				<?php
-				$dataAnchor = ['class' => 'btn btn-outline-primary'];
+				$dataAnchor = ['class' => 'btn btn-outline-primary mr-2 active'];
 				echo anchor('user/login', 'LOGIN', $dataAnchor);
+
+				$dataAnchor = ['class' => 'btn btn-outline-primary mr-2'];
 				echo anchor('user/register', 'REGISTER', $dataAnchor);
 
 				?>
