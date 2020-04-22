@@ -3,7 +3,7 @@
   <div class="container" id="containerAdmin">
     <h1 style=margin-top:70px;> Data Konselor PsychologyCallClinic </h1><br><br>
     <div class="instruksiAdd">
-      <a class="btn btn-success btn-sm" id="tambahKonselor" data-toggle="modal" data-target="#tambahDataModal"><img src="https://www.freeiconspng.com/uploads/add-icon--mono-general-icons--softiconsm-24.png" width="20" alt="Add Icon  Mono General Icons  SoftIconsm" /></a>
+      <a class="btn btn-success btn-sm" id="tambahKonselor" href="<?= base_url(); ?>AdminC/tambahKonselor"><img src="https://www.freeiconspng.com/uploads/add-icon--mono-general-icons--softiconsm-24.png" width="20" alt="Add Icon  Mono General Icons  SoftIconsm" /></a>
     </div><span>
       <div class="instruksiSearch">
         <form class="form-inline">
@@ -12,6 +12,19 @@
         </form>
       </div>
     </span><br><br>
+    <!-- flashdata masih bermasalah -->
+    <?php if ($this->session->flashdata('flash')) : ?>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= $this->session->flashdata('flash'); ?>.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
     <div class="viewTable">
       <table class="table">
         <thead>
@@ -35,15 +48,21 @@
               <td class="text-center"><?= $i++ ?></td>
               <td class="text-center"><?= $k['fullname']; ?></td>
               <td class="text-center"><?= $k['username']; ?></td>
-              <td class="text-center"><?= $k['password']; ?></td>
+              <td class="text-center">
+                <?php if ($k['password'] == '123456') {
+                  echo $k['password'];
+                } else {
+                  echo substr($k['password'], 0, 6) . '...';
+                } ?>
+              </td>
               <td class="text-center"><?= $k['email']; ?></td>
               <td class="text-center"><?= $k['role']; ?></td>
               <td class="text-center"><?= $k['schedule']; ?></td>
               <td class="text-center"><?= $k['speciality']; ?></td>
               <td class="text-center"><?= $k['capacity']; ?></td>
               <td class="text-center">
-                <a href="" class="btn btn-danger btn-sm float-center" onclick="return confirm('Apakah anda yakin menghapus data ini?');" ?><img src="https://www.freeiconspng.com/uploads/trash-can-icon-24.png" width="20" alt="Icon Drawing Trash Can" /></a>
-                <a class="btn btn-success btn-sm float-center" data-toggle="modal" data-target="#editDataModal"><img src="https://www.freeiconspng.com/uploads/edit-icon-3.png" width="20" alt="Free Edit Vector" /></a>
+                <a href="<?= base_url(); ?>AdminC/hapusKonselor/<?= $k['id_konselor'] ?>" class="btn btn-danger btn-sm float-center" onclick="return confirm('Apakah anda yakin menghapus data ini?');" ?><img src="https://www.freeiconspng.com/uploads/trash-can-icon-24.png" width="20" alt="Icon Drawing Trash Can" /></a>
+                <a class="btn btn-success btn-sm float-center" href="<?= base_url(); ?>AdminC/editKonselor/<?= $k['id_konselor'] ?>"><img src="https://www.freeiconspng.com/uploads/edit-icon-3.png" width="20" alt="Free Edit Vector" /></a>
               </td>
           </tr>
         <?php endforeach ?>
@@ -53,104 +72,5 @@
     </div>
   </div>
 </center>
-
-<!-- Modal Tambah Konselor -->
-
-<div class="modal fade" id="tambahDataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <center>
-          <h2>TAMBAH DATA KONSELOR</h2>
-        </center>
-      </div>
-      <div class="modal-body">
-        <!-- isi form ini -->
-        <form method="POST" action="<?= base_url(); ?>AdminC/tambahKonselor">
-          <div class="form-group">
-            <label for="formGroupExampleInput">Full Name </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Full Name" name="fullname" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Username </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name="username" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Email</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput2">Role</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Role" name="role" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Schedule </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Schedule" name="schedule" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Speciality </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Speciality" name="speciality" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Capacity </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Capacity" name="capacity" required>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-        <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Edit Konselor -->
-
-
-<div class="modal fade" id="editDataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <center>
-          <h2>EDIT DATA KONSELOR</h2>
-        </center>
-      </div>
-      <div class="modal-body">
-        <!-- isi form ini -->
-        <form method="POST" action="#">
-          <div class="form-group">
-            <label for="formGroupExampleInput">Full Name </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="fullname" name="fullname" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Email</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput2">Role</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="role" name="role" readonly>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Schedule </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="schedule" name="schedule" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Speciality </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="speciality" name="speciality" required>
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput">Capacity </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="capacity" name="capacity" required>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-        <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- BATAS ISI WEB -->

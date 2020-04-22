@@ -1,13 +1,15 @@
 <div class="container mt-4 mb-4">
-	<div class="row">
+	<div class="row h-50 align-items-center">
 		<div class="col-md-6">
-			<h2>Psychologycall-Clinic</h2>
-			<h3>Pusat Konsultasi Psikologi Terbaik se-Indonesia</h3>
+			<h2 class="title-register">Psychologycall-Clinic</h2>
+			<h3 class="title-register">Pusat Konsultasi Psikologi Terbaik se-Indonesia</h3>
 
 			<div class="akses-button">
 				<?php
-				$dataAnchor = ['class' => 'btn btn-outline-primary'];
+				$dataAnchor = ['class' => 'btn btn-outline-primary mr-2'];
 				echo anchor('user/login', 'LOGIN', $dataAnchor);
+
+				$dataAnchor = ['class' => 'btn btn-outline-primary mr-2 active'];
 				echo anchor('user/register', 'REGISTER', $dataAnchor);
 
 				?>
@@ -78,10 +80,11 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="dob" class="col-3">Tanggal Lahir (yyyy-mm-dd)</label>
+						<label for="dob" class="col-3">Tanggal Lahir</label>
 						<div class="col-9">
 							<?php
 							$data = [
+								'type' => 'date',
 								'name' => 'dob',
 								'id' => 'dob',
 								'class' => 'form-control',

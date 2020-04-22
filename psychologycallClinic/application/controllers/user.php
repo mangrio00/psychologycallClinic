@@ -17,7 +17,7 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('nama_depan', 'Fisrt Name', 'required|trim');
 		$this->form_validation->set_rules('nama_belakang', 'Last Name', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[pasien.email]');
-		$this->form_validation->set_rules('reg[dob]', 'DOB', array('regex_match[/^((0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d)$/]'));
+		$this->form_validation->set_rules('dob', 'DOB', 'required|trim');
 		$this->form_validation->set_rules('no_hp', 'No HP', 'required|trim');
 		$this->form_validation->set_rules('jenis_kelamin', 'Gender', 'required|trim');
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[pasien.username]'); //
