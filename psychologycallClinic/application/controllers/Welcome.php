@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -28,31 +29,10 @@ class Welcome extends CI_Controller {
 	public function konselor()
 	{
 		$this->load->view('template/headerDefault');
-		$this->load->view('default/konselor'); 
-		$this->load->view('template/footer');
-	}
-	
-	//ADMIN PAGE
-	public function adminPasien()
-	{
-		$this->load->view('template/headerAdmin');
-		$this->load->view('admin/adminPasien');
+		$this->load->view('default/konselor');
 		$this->load->view('template/footer');
 	}
 
-	public function adminKonselor()
-	{
-		$this->load->view('template/headerAdmin');
-		$this->load->view('admin/adminKonselor');
-		$this->load->view('template/footer');
-	}
-
-	public function adminReservasi()
-	{
-		$this->load->view('template/headerAdmin');
-		$this->load->view('admin/adminReservasi');
-		$this->load->view('template/footer');
-	}
 
 	//KONSELOR PAGE
 	public function konselorReservasi()
@@ -69,4 +49,5 @@ class Welcome extends CI_Controller {
 		$this->load->view('konselor/profileKonselor');
 		$this->load->view('template/footer');
 	}
+
 }

@@ -1,37 +1,33 @@
-.navbar {
-    background-color:#f57b51;
+  .navbar {
     font-family: 'Libre Baskerville', serif;
     }
   .navbar .navbar-brand {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
+    margin-right: 5px;
   }
-  .navbar .navbar-nav > li > a {
-    color: #fff;
+  .navbar .navbar-nav > li > button {
     margin-bottom : 0;
+    margin-right: 5px;
   }
   body {
     background-color: #D8D8D8;
     font-family: 'Playfair Display', serif;
   }
-  .navbar .navbar-nav > li > a:hover,
-  .navbar .navbar-nav > li > a:focus {
-    background-color: #ffa41b;
-    color: #fff;
+  .navbar .navbar-nav > a:hover,
+  .navbar .navbar-nav > a:focus {
+    background-color: #6b5e51;
+    
   }
   .active {
     font-size: 18px;
   }
-  .btn {
-    font-size: 18px;
-  }
-  .fixed-bottom {
-    background-color:#f57b51;
+  #sticky-footer {
     font-family: 'Libre Baskerville', serif;
     bottom: 0;
     width: 100%;
     padding: 1rem;
-    position: absolute;
+    position: relative;
   }
   .copyright{
     text-align: center;
@@ -57,4 +53,5 @@
   .instruksiAdd{
       float: left;
   }
+ 
   

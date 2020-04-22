@@ -17,17 +17,17 @@
       <div class="container">
           <ul class="nav navbar-nav">
           <li><a class="navbar-brand" style="color:white;">PsychologyCall</a></li>
-          <li class="active" ><a href="<?= base_url(); ?>welcome/konselorReservasi/" style="color:white;">Counselor</a></li>
+          <li class="active"><a href="#" style="color:white;">Counselor</a></li>
           </ul>
           <body>
           <ul class="nav navbar-nav navbar-right text-center">
           <li class="dropdown pull-right">
-              <a class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><span class="glyphicon glyphicon-user"></span> Konselor-Username
+              <a class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><span class="glyphicon glyphicon-user"></span> Pasien-Username
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/profileKonselor">Account</a></li>
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/konselorReservasi">Schedule</a></li>
-              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Log Out</a></li>
+              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Account</a></li>
+              <li class="dropdown-item"><a href="<?= base_url(); ?>welcome/">Make Reservation</a></li>
+              <li class="dropdown-item"><a href="#">Log Out</a></li>
               </ul>
           </li>
           </ul>
