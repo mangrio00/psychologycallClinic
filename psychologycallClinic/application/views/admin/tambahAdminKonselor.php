@@ -6,7 +6,7 @@
                     <br><br>
                     <br>
                     <div class="card-header text-center mt-3">
-                        <h2>TAMBAH DATA KONSELOR</h2>
+                        <h2>CREATE COUNSELOR</h2>
                     </div>
                     <br>
                     <div class="card-body" style="width: 500px;background-color:white;padding:3rem">

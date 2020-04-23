@@ -8,12 +8,21 @@ class Konselor_model extends CI_model
 
     public function get_konselor()
     {
-        return $this->db->get('konselor')->result_array();
+        $this->db->select('*');
+        $this->db->from('konselor');
+        $this->db->order_by('role');
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
     public function get_konselorbyId($id)
     {
         return $this->db->get_where('konselor', ['id_konselor' => $id])->row_array();
+    }
+
+    public function get_konselorbyFullname($fullname)
+    {
+        return $this->db->get_where('konselor', ['fullname' => $fullname])->row_array();
     }
 
     public function cariDataKonselor()

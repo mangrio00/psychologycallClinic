@@ -22,25 +22,28 @@
         <br>
         <table class="table table-hover" style="width: 1000px;">
             <thead style="background-color: #6b5e51; color:white;">
+                <th scope="col">No</th>
                 <th scope="col">Doctor's Name</th>
-                <th scope="col">Specialist</th>
-                <th scope="col">Day</th>
-                <th scope="col">Time</th>
+                <th scope="col">Role</th>
+                <th scope="col">Schedule</th>
+                <th scope="col">Speciality</th>
+                <th scope="col">Capacity</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <?php
+                  $i = 1;
+                  foreach ($konselor as $k): ?>
+                <td><?= $i++ ?></td>
+                <td><?= $k['fullname'] ?></td>
+                <td><?= $k['role'] ?></td>
+                <td><?= $k['schedule'] ?></td>
+                <td><?= $k['speciality'] ?></td>
+                <td><?= $k['capacity'] ?></td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
+                <?php endforeach; ?>
             </tbody>
           </table>
     </center>

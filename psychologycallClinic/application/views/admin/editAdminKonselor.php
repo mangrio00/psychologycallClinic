@@ -1,12 +1,12 @@
-<div class="container">
-    <div class="row mt-3">
-        <center>
-            <div class="col">
+<center>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col md-6">
                 <div class="card">
                     <br><br>
                     <br>
                     <div class="card-header text-center mt-3">
-                        <h2>EDIT DATA KONSELOR</h2>
+                        <h2>EDIT COUNSELOR</h2>
                     </div>
                     <br>
                     <div class="card-body" style="width: 500px;background-color:white;padding:3rem">
@@ -78,6 +78,6 @@
                     <br>
                 </div>
             </div>
-        </center>
+        </div>
     </div>
-</div>
+</center>

@@ -14,6 +14,7 @@ class User extends CI_Controller
 
 	public function register()
 	{
+		$data['title'] = 'Register Page';
 		$this->form_validation->set_rules('nama_depan', 'Fisrt Name', 'required|trim');
 		$this->form_validation->set_rules('nama_belakang', 'Last Name', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[pasien.email]');
@@ -25,7 +26,7 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('konfirmasi_password', 'Re-type Password', 'required|matches[password]');
 
 		if ($this->form_validation->run() == false) {
-			$this->load->view('template/header2');
+			$this->load->view('template/header2', $data);
 			$this->load->view('register');
 		} else {
 			$data = [
@@ -46,10 +47,11 @@ class User extends CI_Controller
 
 	public function login()
 	{
+		$data['title'] = 'Login Page';
 		$this->form_validation->set_rules('username', 'Username', 'required|trim'); //
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]');
 		if ($this->form_validation->run() == false) {
-			$this->load->view('template/header2');
+			$this->load->view('template/header2', $data);
 			$this->load->view('login');
 		} else {
 			//lolos validasi
@@ -67,10 +69,11 @@ class User extends CI_Controller
 		$cekKonselor = $this->User_model->getKonselorbyUsername($user);
 
 		if ($cekPasien) {
-			if (password_verify($user['password'], $cekPasien['password'])) {
+			if ((password_verify($user['password'], $cekPasien['password'])) || ($user['password'] == $cekPasien['password'])) {
 				$data = [
 					'username' => $cekPasien['username'],
-					'id_level' => $cekPasien['id_level']
+					'id_level' => $cekPasien['id_level'],
+					'id_pasien' => $cekPasien['id_pasien']
 				];
 				$this->session->set_userdata($data);
 				redirect('PasienC');
@@ -94,7 +97,8 @@ class User extends CI_Controller
 			if ($user['password'] == $cekKonselor['password']) {
 				$data = [
 					'username' => $cekKonselor['username'],
-					'id_level' => $cekKonselor['id_level']
+					'id_level' => $cekKonselor['id_level'],
+					'id_konselor' => $cekKonselor['id_konselor']
 				];
 				$this->session->set_userdata($data);
 				redirect('KonselorC');
@@ -104,8 +108,14 @@ class User extends CI_Controller
 			}
 		} else {
 			//set flash data  username tidak ada, silahkan regis
-			$this->session->set_flashdata('flash', 'Username tidak ditemukan');
+			$this->session->set_flashdata('flash', 'Username not found please register');
 			redirect('user/login');
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('welcome');
 	}
 }
