@@ -6,35 +6,9 @@
     font-size: 25px;
     margin-right: 5px;
   }
-  .navbar .navbar-nav > li > button {
-    margin-bottom : 0;
-    margin-right: 5px;
-  }
   body {
     background-color: #D8D8D8;
     font-family: 'Playfair Display', serif;
-  }
-  .navbar .navbar-nav > a:hover,
-  .navbar .navbar-nav > a:focus {
-    background-color: #6b5e51;
-    
-  }
-  .active {
-    font-size: 18px;
-  }
-  #sticky-footer {
-    font-family: 'Libre Baskerville', serif;
-    bottom: 0;
-    width: 100%;
-    padding: 1rem;
-    position: relative;
-  }
-  .copyright{
-    text-align: center;
-    color: #fff;
-  }
-  .stretched-link {
-    color: #fff;
   }
   /* Admin  CSS*/
   #containerAdmin{
@@ -53,12 +27,3 @@
   .instruksiAdd{
       float: left;
   }
-<<<<<<< HEAD
- 
-  
-=======
-  #containerKonselor{
-    background-color: #fff;
-    position: relative;
-  }
->>>>>>> 64d04cd13b712d8256cc9a581c05409af63013bb

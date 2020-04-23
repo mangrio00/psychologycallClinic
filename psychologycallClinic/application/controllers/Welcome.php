@@ -22,32 +22,32 @@ class Welcome extends CI_Controller
 	//DEFAULT PAGE
 	public function index()
 	{
-		$this->load->view('template/headerDefault');
-		$this->load->view('default/home'); //page_home not yet
+		$data['title'] = 'Home Page';
+		$this->load->view('template/headerDefault', $data);
+		$this->load->view('default/home', $data);
 		$this->load->view('template/footer');
 	}
 	public function konselor()
 	{
-		$this->load->view('template/headerDefault');
-		$this->load->view('default/konselor');
+		$data['title'] = 'Our Counselor Page';
+		$this->load->view('template/headerDefault', $data);
+		$this->load->view('default/konselor', $data);
 		$this->load->view('template/footer');
 	}
 
+	// //KONSELOR PAGE
+	// public function konselorReservasi()
+	// {
+	// 	$this->load->view('template/headerKonselor');
+	// 	$this->load->view('konselor/konselorReservasi');
+	// 	$this->load->view('template/footer');
+	// }
 
-	//KONSELOR PAGE
-	public function konselorReservasi()
-	{
-		$this->load->view('template/headerKonselor');
-		$this->load->view('konselor/konselorReservasi');
-		$this->load->view('template/footer');
-	}
-
-	//PROFILE   
-	public function profileKonselor()
-	{
-		$this->load->view('template/headerKonselor');
-		$this->load->view('konselor/profileKonselor');
-		$this->load->view('template/footer');
-	}
-
+	// //PROFILE   
+	// public function profileKonselor()
+	// {
+	// 	$this->load->view('template/headerKonselor');
+	// 	$this->load->view('konselor/profileKonselor');
+	// 	$this->load->view('template/footer');
+	// }
 }
