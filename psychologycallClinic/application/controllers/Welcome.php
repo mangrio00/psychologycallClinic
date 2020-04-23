@@ -19,6 +19,12 @@ class Welcome extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Konselor_model');
+    }
+
 	//DEFAULT PAGE
 	public function index()
 	{
@@ -30,6 +36,7 @@ class Welcome extends CI_Controller
 	public function konselor()
 	{
 		$data['title'] = 'Our Counselor Page';
+		$data['konselor'] = $this->Konselor_model->get_konselor();
 		$this->load->view('template/headerDefault', $data);
 		$this->load->view('default/konselor', $data);
 		$this->load->view('template/footer');
