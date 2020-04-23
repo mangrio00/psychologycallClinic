@@ -6,7 +6,7 @@ class PasienC extends CI_Controller
     public function index()
     {
         $this->load->view('template/headerPasien');
-        $this->load->view('pasien/pasienReservasi');
+        $this->load->view('pasien/profilePasien');
         $this->load->view('template/footer');
     }
 }
