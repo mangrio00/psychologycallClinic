@@ -19,7 +19,7 @@
 		<div class="col-md-6">
 			<div class="card frame-form-psyco">
 
-				<div class="card-header">Daftar Akun</div>
+				<div class="card-header">Registration</div>
 
 				<div class="card-body">
 
@@ -28,14 +28,14 @@
 					?>
 
 					<div class="form-group row">
-						<label for="nama_depan" class="col-3">Nama Depan</label>
+						<label for="nama_depan" class="col-3">First Name</label>
 						<div class="col-9">
 							<?php
 							$data = [
 								'name' => 'nama_depan',
 								'id' => 'nama_depan',
 								'class' => 'form-control',
-								'placeholder' => 'Nama Depan',
+								'placeholder' => 'Enter First Name',
 								'value' => set_value('nama_depan')
 							];
 							echo form_input($data);
@@ -46,14 +46,14 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="nama_belakang" class="col-3">Nama Belakang</label>
+						<label for="nama_belakang" class="col-3">Last Name</label>
 						<div class="col-9">
 							<?php
 							$data = [
 								'name' => 'nama_belakang',
 								'id' => 'nama_belakang',
 								'class' => 'form-control',
-								'placeholder' => 'Nama Belakang',
+								'placeholder' => 'Enter Last Name',
 								'value' => set_value('nama_belakang')
 							];
 							echo form_input($data);
@@ -70,7 +70,7 @@
 								'name' => 'email',
 								'id' => 'email',
 								'class' => 'form-control',
-								'placeholder' => 'Email',
+								'placeholder' => 'Enter Email',
 								'value' => set_value('email')
 							];
 							echo form_input($data);
@@ -80,7 +80,7 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="dob" class="col-3">Tanggal Lahir</label>
+						<label for="dob" class="col-3">Date of Birth</label>
 						<div class="col-9">
 							<?php
 							$data = [
@@ -88,7 +88,7 @@
 								'name' => 'dob',
 								'id' => 'dob',
 								'class' => 'form-control',
-								'placeholder' => 'Tanggal Lahir',
+								'placeholder' => 'Choose Date of Birth',
 								'value' => set_value('dob')
 							];
 							echo form_input($data);
@@ -98,14 +98,14 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="no_hp" class="col-3">Nomor Handphone</label>
+						<label for="no_hp" class="col-3">Phone Number</label>
 						<div class="col-9">
 							<?php
 							$data = [
 								'name' => 'no_hp',
 								'id' => 'no_hp',
 								'class' => 'form-control',
-								'placeholder' => 'Nomor Handphone',
+								'placeholder' => 'Enter Phone Number',
 								'value' => set_value('no_hp')
 							];
 							echo form_input($data);
@@ -116,7 +116,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="jenis_kelamin" class="col-3">Jenis Kelamin</label>
+						<label for="jenis_kelamin" class="col-3">Gender</label>
 						<div class="col-9">
 							<div class="row">
 								<div class="col-4">
@@ -156,7 +156,7 @@
 								'name' => 'username',
 								'id' => 'username',
 								'class' => 'form-control',
-								'placeholder' => 'Masukan Username',
+								'placeholder' => 'Enter Username',
 								'value' => set_value('username')
 							];
 							echo form_input($data);
@@ -174,7 +174,7 @@
 								'name' => 'password',
 								'id' => 'password',
 								'class' => 'form-control',
-								'placeholder' => 'Masukan Password'
+								'placeholder' => 'Enter Password'
 							];
 							echo form_password($data);
 							?>
@@ -184,14 +184,14 @@
 
 					</div>
 					<div class="form-group row">
-						<label for="konfirmasi_password" class="col-3">Konfirmasi Password</label>
+						<label for="konfirmasi_password" class="col-3">Re-type Password</label>
 						<div class="col-9">
 							<?php
 							$data = [
 								'name' => 'konfirmasi_password',
 								'id' => 'konfirmasi_password',
 								'class' => 'form-control',
-								'placeholder' => 'Masukan Kembali Password Anda'
+								'placeholder' => 'Enter Re-type Password'
 							];
 							echo form_password($data);
 							?>

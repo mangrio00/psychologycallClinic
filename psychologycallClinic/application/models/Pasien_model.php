@@ -40,4 +40,11 @@ class Pasien_model extends CI_model
         $this->db->where('id_pasien', $id);
         return $this->db->update('pasien', $data);
     }
+
+    public function edit_passpasien($id, $password_hash)
+    {
+        $this->db->set('password', $password_hash);
+        $this->db->where('id_pasien', $id);
+        return $this->db->update('pasien');
+    }
 }

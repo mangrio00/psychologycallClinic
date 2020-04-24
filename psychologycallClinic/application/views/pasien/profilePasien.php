@@ -1,43 +1,68 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PsychologicalCall</title>
-</head>
-<body>
-    <div class="container" id="containerPasien">
-    <h1 style= margin-top:70px;>UBAH PROFILE</h1><br><br>
-    <div class="modal-content">
-      <div class="modal-body">
-      <form method="POST" action="#">
-        <div class="form-group">
-          <label for="formGroupExampleInput" class="col-3">USERNAME</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Masukan Username baru" name="username" required >
+<div class="head" style="margin: 70px 0px 0px 350px;width:600px;background-color: #588da8;border-radius: 5px 5px 5px 5px ">
+    <center>
+        <h1 style="margin: 20px"> YOUR ACCOUNT </h1>
+    </center>
+</div>
+<div class="row" style="margin:5px 0px 0px 350px;">
+    <div class="col-sm-6" style="width: 300px;background-color: #588da8;border-radius: 5px 0px 0px 5px">
+        <div class="card " style="margin: 20px 0px 60px 0px">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" class="form-control" id="FirstName" name="firstname" value="<?= $pasien['firstname'] ?>" readonly>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput" class="col-3">NAMA DEPAN</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Depan" name="nama_depan"required>
+        <div class="card" style="margin: 20px 0px 60px 0px">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="<?= $pasien['email'] ?>" readonly>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput" class="col-3">NAMA BELAKANG</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Belakang" name="nama_belakang"required>
+        <div class="card" style="margin: 20px 0px 60px 0px">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="email" class="form-control" id="phone" name="phone" value="<?= $pasien['phone'] ?>" readonly>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput" class="col-3">EMAIL</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email"required>
+    </div>
+    <div class="col-sm-6" style="width: 300px;background-color: #588da8;border-radius: 0px 5px 5px 0px">
+        <div class="card" style="margin: 20px 0px 60px 0px">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" value="<?= $pasien['lastname'] ?>" readonly>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput" class="col-3">TANGGAL LAHIR</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tanggal Lahir" name="dob"required>
+        <div class="card" style="margin: 20px 0px 60px 0px">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="dob">DOB</label>
+                    <input type="date" class="form-control" id="dob" name="dob" value="<?= $pasien['dob'] ?>" readonly>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput" class="col-3">NOMOR HANDPHONE</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nomor Handphone" name="no_hp"required>
-        </div> 
-        <input type="submit" class="btn btn-primary" id="hapus" value="SIMPAN" placeholder="save"></button>
-        <div class="modal-footer">
-      </div>
-      </form>
-</body>
-</html>
+        <div class="card" style="margin: 20px 0px 60px 0px">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input type="text" class="form-control" id="gender" name="gender" value="<?= $pasien['gender'] ?>" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="head" style="margin: 10px 0px 0px 350px;width:600px;background-color: #588da8;border-radius: 5px 5px 5px 5px; padding: 20px">
+    <center>
+        <a href="<?= base_url(); ?>PasienC/ubahprofilePasien/<?= $pasien['id_pasien'] ?>" class="btn btn-link" style="background-color: #6b5e51;color: whitesmoke">Edit Your Account</a>
+        <a href="<?= base_url(); ?>pasienC/ubahPassword/" class="btn btn-link" style="background-color: #6b5e51;color: whitesmoke">Change Password</a>
+        <a href="<?= base_url(); ?>User/logout" class="btn btn-link" style="background-color: #6b5e51;color: whitesmoke">Logout</a>
+    </center>
+</div>
+<br>
+<br>

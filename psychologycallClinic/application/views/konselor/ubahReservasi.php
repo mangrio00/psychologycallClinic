@@ -3,8 +3,14 @@
         <center>
             <div class="col md-6">
                 <div class="card">
-                    <h1 style=margin-top:70px;> Edit PsychologyCallClinic </h1><br><br>
-                    <div class="card-body" style="width: 500px;background-color:white;padding:3rem">
+                    <br><br>
+                    <br>
+                    <div class="head" style="width:500px;background-color: #be7575;border-radius: 5px 5px 5px 5px ">
+                        <center>
+                            <h1 style="margin: 20px"> EDIT STATUS RESERVATION </h1>
+                        </center>
+                    </div>
+                    <div class="card-body" style="width: 500px;background-color:#be7575;padding:3rem">
                         <form action="" method="POST">
                             <div class="form-group">
                                 <label for="nama">Patiens Name</label>

@@ -1,18 +1,3 @@
-<!-- <script>
-    $(document).ready(function() {
-        $('#role').change(function() {
-            var role = $(this).val();
-
-            $.ajax({
-                type: 'POST',
-                url: 'PasienC/counselorName',
-                data: 'role=' + role,
-                success: function(response) {
-                    $('#counselorName').html(response);
-                }
-            })
-        })
-    }); -->
 </script>
 <div class="container">
     <div class="row mt-3">
@@ -21,11 +6,13 @@
                 <div class="card">
                     <br><br>
                     <br>
-                    <div class="card-header text-center mt-3">
-                        <h2>Reservation</h2>
+                    <div class="head" style="width:500px;background-color: #588da8;border-radius: 5px 5px 5px 5px ">
+                        <center>
+                            <h1 style="margin: 20px"> RESERVATION </h1>
+                        </center>
                     </div>
                     <br>
-                    <div class="card-body" style="width: 500px;background-color:white;padding:3rem">
+                    <div class="card-body" style="width: 500px;background-color:#588da8;padding:3rem">
                         <form method="POST" action="">
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('name'); ?></small>

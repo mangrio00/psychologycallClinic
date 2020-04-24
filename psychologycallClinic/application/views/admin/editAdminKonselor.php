@@ -5,11 +5,13 @@
                 <div class="card">
                     <br><br>
                     <br>
-                    <div class="card-header text-center mt-3">
-                        <h2>EDIT COUNSELOR</h2>
+                    <div class="head" style="width:500px;background-color: #588da8;border-radius: 5px 5px 5px 5px ">
+                        <center>
+                            <h1 style="margin: 20px"> EDIT COUNSELOR </h1>
+                        </center>
                     </div>
                     <br>
-                    <div class="card-body" style="width: 500px;background-color:white;padding:3rem">
+                    <div class="card-body" style="width: 500px;background-color:#588da8;padding:3rem;border-radius: 5px 5px 5px 5px ">
                         <form method="POST" action="">
                             <input type="hidden" name="id">
                             <div class="form-group">
@@ -69,7 +71,7 @@
                                 <input type="text" class="form-control" id="capacity" placeholder="Capacity" name="capacity" value="<?= $konselor['capacity'] ?>">
                             </div>
                             <div class="footer">
-                                <a class="btn btn-success btn-sm" href="<?= base_url(); ?>AdminC/adminKonselor">Back</a>
+                                <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>AdminC/adminKonselor">Back</a>
                                 <input type="submit" class="btn btn-primary btn-sm" id="add" value="Save">
                             </div>
                         </form>

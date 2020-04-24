@@ -5,11 +5,13 @@
                 <div class="card">
                     <br><br>
                     <br>
-                    <div class="card-header text-center mt-3">
-                        <h2>CREATE PATIENT</h2>
+                    <div class="head" style="width:500px;background-color: #588da8;border-radius: 5px 5px 5px 5px ">
+                        <center>
+                            <h1 style="margin: 20px"> CREATE PATIENT </h1>
+                        </center>
                     </div>
                     <br>
-                    <div class="card-body" style="width: 500px;background-color:white;padding:3rem">
+                    <div class="card-body" style="width: 500px;background-color:#588da8;padding:3rem;border-radius: 5px 5px 5px 5px">
                         <form method="POST" action="#">
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('firstname'); ?></small>
@@ -49,7 +51,7 @@
                                 <input type="text" class="form-control" id="phone" placeholder="phone" name="phone" value="<?= set_value('phone') ?>">
                             </div>
                             <div class="footer">
-                                <a class="btn btn-success btn-sm" href="<?= base_url(); ?>AdminC/adminPasien">Back</a>
+                                <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>AdminC/adminPasien">Back</a>
                                 <input type="submit" class="btn btn-primary btn-sm" id="add" value="Submit" placeholder="Add">
                             </div>
                         </form>

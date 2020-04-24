@@ -21,6 +21,7 @@ class AdminC extends CI_Controller
         }
         $this->load->view('template/headerAdmin', $data);
         $this->load->view('admin/adminPasien', $data);
+        $this->load->view('template/footer');
     }
 
     public function adminKonselor()
@@ -32,6 +33,7 @@ class AdminC extends CI_Controller
         }
         $this->load->view('template/headerAdmin', $data);
         $this->load->view('admin/adminKonselor', $data);
+        $this->load->view('template/footer');
     }
 
     public function adminReservasi()

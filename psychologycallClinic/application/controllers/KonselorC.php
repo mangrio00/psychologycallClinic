@@ -23,6 +23,7 @@ class KonselorC extends CI_Controller
         }
         $this->load->view('template/headerKonselor', $data);
         $this->load->view('konselor/konselorReservasi', $data);
+        $this->load->view('template/footer');
     }
 
     public function ubah($id_reservasi)

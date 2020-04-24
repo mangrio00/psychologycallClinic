@@ -42,7 +42,7 @@
 								'name' => 'username',
 								'id' => 'username',
 								'class' => 'form-control',
-								'placeholder' => 'Masukan Username',
+								'placeholder' => 'Enter Username',
 								'value' => set_value('username')
 							];
 							echo form_input($data);
@@ -59,7 +59,7 @@
 								'name' => 'password',
 								'id' => 'password',
 								'class' => 'form-control',
-								'placeholder' => 'Masukan Password'
+								'placeholder' => 'Enter Password'
 							];
 							echo form_password($data);
 							?>
