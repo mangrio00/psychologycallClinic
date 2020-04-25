@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('res_date'); ?></small>
                                 <label for="res_date">Reservation Date</label>
-                                <input type="date" class="form-control" id="res_date" placeholder="res_date" name="res_date" required>
+                                <input type="date" class="form-control" id="res_date" placeholder="res_date" name="res_date">
                             </div>
                             <div class="form-group">
                                 <small class="text-danger"><?php echo form_error('counselorName'); ?></small>

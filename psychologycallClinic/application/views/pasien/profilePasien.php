@@ -3,6 +3,14 @@
         <h1 style="margin: 20px"> YOUR ACCOUNT </h1>
     </center>
 </div>
+<?php if ($this->session->flashdata('flash')) : ?>
+    <div class="row mt-3" style="width: 600px;margin:5px 0px 0px 350px">
+        <div class="alert alert-info alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong><?= $this->session->flashdata('flash'); ?></strong>
+        </div>
+    </div>
+<?php endif; ?>
 <div class="row" style="margin:5px 0px 0px 350px;">
     <div class="col-sm-6" style="width: 300px;background-color: #588da8;border-radius: 5px 0px 0px 5px">
         <div class="card " style="margin: 20px 0px 60px 0px">

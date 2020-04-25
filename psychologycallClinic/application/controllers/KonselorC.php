@@ -6,6 +6,11 @@ class KonselorC extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        if (!$this->session->userdata('username')) {
+            redirect('user/login');
+        } else if ($this->session->userdata('id_level') != 3) {
+            redirect('user/akses_blocked');
+        }
         $this->load->model('Reserv_model');
         // $this->load->model('profilKonselor_model')
         $this->load->library('form_validation');

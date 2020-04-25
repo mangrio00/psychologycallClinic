@@ -7,6 +7,11 @@ class AdminC extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        if (!$this->session->userdata('username')) {
+            redirect('user/login');
+        } else if ($this->session->userdata('id_level') != 1) {
+            redirect('user/akses_blocked');
+        }
         $this->load->model('Konselor_model');
         $this->load->model('Pasien_model');
         $this->load->model('Reserv_model');

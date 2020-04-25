@@ -26,6 +26,14 @@
 					<?php
 					echo form_open(base_url('user/login'), ['class' => 'form-psycho']);
 					?>
+					<?php if ($this->session->flashdata('flashSuccess')) { ?>
+						<div class="alert alert-success alert-dismissible fade show" role="alert">
+							<?= $this->session->flashdata('flashSuccess'); ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					<?php } ?>
 					<?php if ($this->session->flashdata('flash')) { ?>
 						<div class="alert alert-danger alert-dismissible fade show" role="alert">
 							<?= $this->session->flashdata('flash'); ?>

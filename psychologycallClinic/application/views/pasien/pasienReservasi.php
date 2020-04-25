@@ -15,13 +15,9 @@
         <!-- flashdata masih bermasalah -->
         <?php if ($this->session->flashdata('flash')) : ?>
             <div class="row mt-3">
-                <div class="col-md-6">
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <?= $this->session->flashdata('flash'); ?>.
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                <div class="alert alert-success alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong><?= $this->session->flashdata('flash'); ?></strong>
                 </div>
             </div>
         <?php endif; ?>

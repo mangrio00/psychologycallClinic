@@ -41,6 +41,7 @@ class User extends CI_Controller
 				'id_level' => 2
 			];
 			$this->User_model->tambah_pasien($data);
+			$this->session->set_flashdata('flashSuccess', 'Congratulation! Plase Login');
 			redirect('user/login');
 		}
 	}
@@ -110,6 +111,24 @@ class User extends CI_Controller
 			//set flash data  username tidak ada, silahkan regis
 			$this->session->set_flashdata('flash', 'Username not found please register');
 			redirect('user/login');
+		}
+	}
+
+	public function akses_blocked()
+	{
+		$data['pasien'] = $this->db->get_where('pasien', ['username' =>
+		$this->session->userdata('username')])->row_array();
+		$data['konselor'] = $this->db->get_where('konselor', ['username' =>
+		$this->session->userdata('username')])->row_array();
+		if ($this->session->userdata('id_level') == 2) {
+			$this->load->view('template/headerPasien', $data);
+			$this->load->view('blocked');
+		} else if ($this->session->userdata('id_level') == 3) {
+			$this->load->view('template/headerKonselor', $data);
+			$this->load->view('blocked');
+		} else {
+			$this->load->view('template/headerAdmin', $data);
+			$this->load->view('blocked');
 		}
 	}
 

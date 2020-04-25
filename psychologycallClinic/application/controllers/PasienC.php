@@ -6,6 +6,11 @@ class PasienC extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        if (!$this->session->userdata('username')) {
+            redirect('user/login');
+        } else if ($this->session->userdata('id_level') != 2) {
+            redirect('user/akses_blocked');
+        }
         $this->load->model('Konselor_model');
         $this->load->model('Reserv_model');
         $this->load->model('Pasien_model');
@@ -55,6 +60,7 @@ class PasienC extends CI_Controller
                 'phone' => $this->input->post('no_hp'),
             ];
             $this->Pasien_model->edit_pasien($id, $data);
+            $this->session->set_flashdata('flash', 'Congratulation! Your Account Has Been Updated');
             redirect('PasienC/profilePasien');
         }
     }
@@ -104,7 +110,7 @@ class PasienC extends CI_Controller
             $konselor = $this->db->get_where('konselor', ['fullname' =>
             $this->input->post('counselorName')])->row_array();
             $data = [
-                'nama' => $this->input->post('nama'),
+                'nama' => $this->input->post('name'),
                 'tgl_reserv' => $this->input->post('res_date'),
                 'nama_konselor' => $this->input->post('counselorName'),
                 'status' => 'pending',
@@ -138,8 +144,10 @@ class PasienC extends CI_Controller
         $this->form_validation->set_rules('counselorName', 'Counselor Name', 'required|trim');
         $tgl = new DateTime($this->input->post('res_date'));
         $tglsekarang = new DateTime();
-
-        if (($this->form_validation->run() == false) || ($tgl < $tglsekarang)) {
+        if (($tglsekarang > $data['reservasi']['tgl_reserv']) && ($data['reservasi']['status'] == 'schedule')) {
+            $this->session->set_flashdata('flash', 'Can not be changed because reservation date has passed');
+            redirect('PasienC/');
+        } else if (($this->form_validation->run() == false) || ($tgl < $tglsekarang)) {
             $this->load->view('template/headerPasien', $data);
             $this->load->view('pasien/ubahPasienReservasi', $data);
         } else {

@@ -11,18 +11,14 @@
                         </center>
                     </div>
                     <br>
-                    <div class="card-body" style="width: 500px;background-color:#588da8;padding:3rem">
+                    <div class="card-body" style="width: 500px;background-color:#588da8;padding:2rem;border-radius: 5px 5px 5px 5px ">
                         <form method="POST" action="">
                             <div class="form-group">
                                 <?php if ($this->session->flashdata('flash')) : ?>
                                     <div class="row mt-3">
-                                        <div class="col-md-6">
-                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                <?= $this->session->flashdata('flash'); ?>.
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            <strong><?= $this->session->flashdata('flash'); ?></strong>
                                         </div>
                                     </div>
                                 <?php endif; ?>
