@@ -2,7 +2,7 @@
     <div class="container" id="containerAdmin">
         <h1 style=margin-top:70px;> Reservation for <?= $konselor['fullname'] ?> </h1><br><br>
         <div class="instruksiSearch">
-            <form class="form-inline">
+            <form class="form-inline" action="" method="POST">
                 <input class="form-control " type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-warning " type="submit"><img src="https://www.freeiconspng.com/uploads/search-icon-png-10.png" width="22px" alt="Library Search Icon" /></button>
             </form>

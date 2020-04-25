@@ -24,6 +24,9 @@ class PasienC extends CI_Controller
         $this->session->userdata('username')])->row_array();
         $id_pasien = $this->session->userdata('id_pasien');
         $data['reservasi'] = $this->Reserv_model->getResevByIdPasien($id_pasien);
+        if ($this->input->post('keyword')) {
+            $data['reservasi'] = $this->Reserv_model->cariDataReservbyId($id_pasien);
+        }
         $this->load->view('template/headerPasien', $data);
         $this->load->view('pasien/pasienReservasi', $data);
         $this->load->view('template/footer');
@@ -53,14 +56,22 @@ class PasienC extends CI_Controller
             $this->load->view('template/headerPasien', $data);
             $this->load->view('pasien/ubahprofilePasien', $data);
         } else {
+            $reserv = $this->db->get_where('reservasi', ['id_pasien' =>
+            $data['pasien']['id_pasien']])->result_array();
             $data = [
                 'firstname' => $this->input->post('nama_depan'),
                 'lastname' => $this->input->post('nama_belakang'),
                 'dob' => $this->input->post('dob'),
                 'phone' => $this->input->post('no_hp'),
             ];
+            $name = [
+                'nama' => $this->input->post('nama_depan') . " " . $this->input->post('nama_belakang')
+            ];
             $this->Pasien_model->edit_pasien($id, $data);
             $this->session->set_flashdata('flash', 'Congratulation! Your Account Has Been Updated');
+            foreach ($reserv as $r) :
+                $this->Reserv_model->ubahDataReserv($r['id_reservasi'], $name);
+            endforeach;
             redirect('PasienC/profilePasien');
         }
     }

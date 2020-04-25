@@ -58,12 +58,21 @@ class Reserv_model extends CI_model
 	public function cariDataReserv()
 	{
 		$keyword = $this->input->post('keyword', true);
-		//use query builder class to search data mahasiswa based on keyword "nama" or "jurusan" or "nim" or "email"
 		$this->db->like('nama', $keyword);
-		$this->db->or_like('tgl_resev', $keyword);
+		$this->db->or_like('tgl_reserv', $keyword);
 		$this->db->or_like('nama_konselor', $keyword);
 		$this->db->or_like('status', $keyword);
-		//return data mahasiswa that has been searched
 		return $this->db->get('reservasi')->result_array();
+	}
+
+	public function cariDataReservbyId($id)
+	{
+		$keyword = $this->input->post('keyword', true);
+		$this->db->select('*');
+		$this->db->from('reservasi');
+		$where = "id_pasien = '" . $id . "' AND (nama LIKE '" . $keyword . "' OR tgl_reserv LIKE '" . $keyword . "' OR nama_konselor LIKE '" . $keyword . "' OR status LIKE '" . $keyword . "')";
+		$this->db->where($where);
+		$query = $this->db->get();
+		return $query->result_array();
 	}
 }

@@ -6,7 +6,7 @@
       <a class="btn btn-success btn-sm" id="tambahPasien" href="<?= base_url(); ?>/AdminC/tambahPasien"><img src="https://www.freeiconspng.com/uploads/add-icon--mono-general-icons--softiconsm-24.png" width="20" alt="Add Icon  Mono General Icons  SoftIconsm" /></a>
     </div><span>
       <div class="instruksiSearch">
-        <form class="form-inline">
+        <form class="form-inline" action="" method="POST">
           <input class="form-control " type="search" placeholder="Search" name="keyword" aria-label="Search">
           <button class="btn btn-warning " type="submit"><img src="https://www.freeiconspng.com/uploads/search-icon-png-10.png" width="22px" alt="Library Search Icon" /></button>
         </form>

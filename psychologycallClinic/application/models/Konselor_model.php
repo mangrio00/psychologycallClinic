@@ -25,8 +25,9 @@ class Konselor_model extends CI_model
         return $this->db->get_where('konselor', ['fullname' => $fullname])->row_array();
     }
 
-    public function cariDataKonselor($keyword)
+    public function cariDataKonselor()
     {
+        $keyword = $this->input->post('keyword');
         $this->db->like('fullname', $keyword);
         $this->db->or_like('username', $keyword);
         $this->db->or_like('email', $keyword);
@@ -47,5 +48,12 @@ class Konselor_model extends CI_model
     {
         $this->db->where('id_konselor', $id);
         return $this->db->update('konselor', $data);
+    }
+
+    public function edit_passkonselor($id, $password_hash)
+    {
+        $this->db->set('password', $password_hash);
+        $this->db->where('id_konselor', $id);
+        return $this->db->update('konselor');
     }
 }

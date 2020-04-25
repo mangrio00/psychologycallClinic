@@ -6,7 +6,7 @@
             <a class="btn btn-success btn-sm " id="tambahReservasi" href="<?= base_url(); ?>pasienC/tambahReservasi/<?= $pasien['id_pasien'] ?>"><img src="https://www.freeiconspng.com/uploads/reservation-icon-20.png" width="22px" /></a>
         </div><span>
             <div class="instruksiSearch">
-                <form class="form-inline">
+                <form class="form-inline" action="" method="POST">
                     <input class="form-control " type="search" placeholder="Search" name="keyword" aria-label="Search">
                     <button class="btn btn-warning " type="submit"><img src="https://www.freeiconspng.com/uploads/search-icon-png-10.png" width="22px" alt="Library Search Icon" /></button>
                 </form>
