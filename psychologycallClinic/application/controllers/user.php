@@ -49,7 +49,7 @@ class User extends CI_Controller
 	public function login()
 	{
 		$data['title'] = 'Login Page';
-		$this->form_validation->set_rules('username', 'Username', 'required|trim'); //
+		$this->form_validation->set_rules('username', 'Username', 'required|trim');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]');
 		if ($this->form_validation->run() == false) {
 			$this->load->view('template/header2', $data);
@@ -116,6 +116,7 @@ class User extends CI_Controller
 
 	public function akses_blocked()
 	{
+		$data['title'] = 'Access Denied';
 		$data['pasien'] = $this->db->get_where('pasien', ['username' =>
 		$this->session->userdata('username')])->row_array();
 		$data['konselor'] = $this->db->get_where('konselor', ['username' =>

@@ -25,9 +25,8 @@ class Konselor_model extends CI_model
         return $this->db->get_where('konselor', ['fullname' => $fullname])->row_array();
     }
 
-    public function cariDataKonselor()
+    public function cariDataKonselor($keyword)
     {
-        $keyword = $this->input->post('keyword', true);
         $this->db->like('fullname', $keyword);
         $this->db->or_like('username', $keyword);
         $this->db->or_like('email', $keyword);

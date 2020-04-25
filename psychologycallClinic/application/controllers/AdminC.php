@@ -34,7 +34,7 @@ class AdminC extends CI_Controller
         $data['title'] = 'Counselor Data';
         $data['konselor'] = $this->Konselor_model->get_konselor();
         if ($this->input->post('keyword')) {
-            $data['konselor'] = $this->Konselor_model->cariDataKonselor();
+            $data['konselor'] = $this->Konselor_model->cariDataKonselor($this->input->post('keyword'));
         }
         $this->load->view('template/headerAdmin', $data);
         $this->load->view('admin/adminKonselor', $data);
