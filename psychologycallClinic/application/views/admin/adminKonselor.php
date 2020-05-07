@@ -38,31 +38,8 @@
             <td class="text-center" scope="col">Action</td>
           </tr>
         </thead>
-        <tbody>
-          <tr><?php
-              $i = 1;
-              foreach ($konselor as $k) : ?>
-              <td class="text-center"><?= $i++ ?></td>
-              <td class="text-center"><?= $k['fullname']; ?></td>
-              <td class="text-center"><?= $k['username']; ?></td>
-              <td class="text-center">
-                <?php if ($k['password'] == '123456') {
-                  echo $k['password'];
-                } else {
-                  echo substr($k['password'], 0, 6) . '...';
-                } ?>
-              </td>
-              <td class="text-center"><?= $k['email']; ?></td>
-              <td class="text-center"><?= $k['role']; ?></td>
-              <td class="text-center"><?= $k['schedule']; ?></td>
-              <td class="text-center"><?= $k['speciality']; ?></td>
-              <td class="text-center"><?= $k['capacity']; ?></td>
-              <td class="text-center">
-                <a href="<?= base_url(); ?>AdminC/hapusKonselor/<?= $k['id_konselor'] ?>" class="btn btn-danger btn-sm float-center" onclick="return confirm('Are you sure you want to delete this data?');" ?><img src="https://www.freeiconspng.com/uploads/trash-can-icon-24.png" width="20" alt="Icon Drawing Trash Can" /></a>
-                <a class="btn btn-success btn-sm float-center" href="<?= base_url(); ?>AdminC/editKonselor/<?= $k['id_konselor'] ?>"><img src="https://www.freeiconspng.com/uploads/edit-icon-3.png" width="20" alt="Free Edit Vector" /></a>
-              </td>
-          </tr>
-        <?php endforeach ?>
+        <tbody id="tbl_data" style="text-align: center">
+
         </tbody>
       </table>
       <br><br>
@@ -71,3 +48,40 @@
 </center>
 
 <!-- BATAS ISI WEB -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    tampil_data();
+    //Menampilkan Data di tabel
+    function tampil_data() {
+      $.ajax({
+        url: '<?php echo base_url(); ?>AdminC/ambilDataKonselor',
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+          console.log(response);
+          var i;
+          var no = 0;
+          var html = "";
+          for (i = 0; i < response.length; i++) {
+            no++;
+            response[i].pass = response[i].password.substring(0, 6);
+            html = html + '<tr>' +
+              '<td>' + no + '</td>' +
+              '<td>' + response[i].fullname + '</td>' +
+              '<td>' + response[i].username + '</td>' +
+              '<td>' + response[i].pass + '</td>' +
+              '<td>' + response[i].email + '</td>' +
+              '<td>' + response[i].role + '</td>' +
+              '<td>' + response[i].schedule + '</td>' +
+              '<td>' + response[i].speciality + '</td>' +
+              '<td>' + response[i].capacity + '</td>' +
+              '<td style="width: 16.66%;">' + '<span><a data-id="' + response[i].id_konselor + '" class="btn btn-success btn_edit" href="<?= base_url(); ?>AdminC/editKonselor/' + response[i].id_konselor + '"><img src="https://www.freeiconspng.com/uploads/edit-icon-3.png" width="20" alt="Free Edit Vector" /></a><a style="margin-left: 5px;" data-id="' + response[i].id_konselor + '" class="btn btn-danger btn_hapus" href="<?= base_url(); ?>AdminC/hapusKonselor/' + response[i].id_konselor + '"><img src="https://www.freeiconspng.com/uploads/trash-can-icon-24.png" width="20" alt="Icon Drawing Trash Can" /></a></span>' + '</td>' +
+              '</tr>';
+          }
+          $("#tbl_data").html(html);
+        }
+      });
+    }
+
+  });
+</script>

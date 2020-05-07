@@ -33,22 +33,8 @@
                         <td class="text-center" scope="col">Action</td>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <?php
-                        $i = 1;
-                        foreach ($reservasi as $r) : ?>
-                            <td class="text-center"><?= $i++ ?></td>
-                            <td class="text-center"><?= $r['nama']; ?></td>
-                            <td class="text-center"><?= $r['tgl_reserv']; ?></td>
-                            <td class="text-center"><?= $r['nama_konselor']; ?></td>
-                            <td class="text-center"><?= $r['status']; ?></td>
-                            <td class="text-center">
-                                <a href="<?= base_url(); ?>pasienC/hapusReservasi/<?= $r['id_reservasi'] ?>" class="btn btn-danger btn-sm float-center" onclick="return confirm('Are you sure you want to delete this data?');" ?><img src="https://www.freeiconspng.com/uploads/trash-can-icon-24.png" width="20" alt="Icon Drawing Trash Can" /></a>
-                                <a class="btn btn-success btn-sm float-center" href="<?= base_url(); ?>pasienC/ubahReservasi/<?= $r['id_reservasi'] ?>"><img src="https://www.freeiconspng.com/uploads/edit-icon-3.png" width="20" alt="Free Edit Vector" /></a>
-                            </td>
-                    </tr>
-                <?php endforeach ?>
+                <tbody id="tbl_data" style="text-align: center">
+
                 </tbody>
             </table>
             <br><br>
@@ -57,3 +43,36 @@
 </center>
 
 <!-- BATAS ISI WEB -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        tampil_data();
+        //Menampilkan Data di tabel
+        function tampil_data() {
+            $.ajax({
+                url: '<?php echo base_url(); ?>PasienC/ambilDataReservasi',
+                type: 'POST',
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response);
+                    var i;
+                    var no = 0;
+                    var html = "";
+                    for (i = 0; i < response.length; i++) {
+                        no++;
+                        html = html + '<tr>' +
+                            '<td>' + no + '</td>' +
+                            '<td>' + response[i].nama + '</td>' +
+                            '<td>' + response[i].tgl_reserv + '</td>' +
+                            '<td>' + response[i].nama_konselor + '</td>' +
+                            '<td>' + response[i].status + '</td>' +
+                            '<td style="width: 16.66%;">' + '<span><a data-id="' + response[i].id_reservasi + '" class="btn btn-success btn_edit" href="<?= base_url(); ?>PasienC/ubahReservasi/' + response[i].id_reservasi + '"><img src="https://www.freeiconspng.com/uploads/edit-icon-3.png" width="20" alt="Free Edit Vector" /></a><a style="margin-left: 5px;" data-id="' + response[i].id_reservasi + '" class="btn btn-danger btn_hapus" href="<?= base_url(); ?>PasienC/hapusReservasi/' + response[i].id_reservasi + '"><img src="https://www.freeiconspng.com/uploads/trash-can-icon-24.png" width="20" alt="Icon Drawing Trash Can" /></a></span>' + '</td>' +
+                            '</tr>';
+                    }
+                    $("#tbl_data").html(html);
+                }
+            });
+        }
+
+    });
+</script>

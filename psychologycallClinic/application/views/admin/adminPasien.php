@@ -36,33 +36,49 @@
             <td class="text-center" scope="col">Action</td>
           </tr>
         </thead>
-        <tbody>
-          <tr><?php
-              $i = 1;
-              foreach ($pasien as $p) : ?>
-              <td class="text-center"><?= $i++ ?></td>
-              <td class="text-center"><?= $p['firstname']; ?></td>
-              <td class="text-center"><?= $p['lastname']; ?></td>
-              <td class="text-center"><?= $p['email']; ?></td>
-              <td class="text-center"><?= $p['dob']; ?></td>
-              <td class="text-center"><?= $p['phone']; ?></td>
-              <td class="text-center"><?= $p['gender']; ?></td>
-              <td class="text-center"><?= $p['username']; ?></td>
-              <td class="text-center">
-                <?php if ($p['password'] == '654321') {
-                  echo $p['password'];
-                } else {
-                  echo substr($p['password'], 0, 6) . '...';
-                } ?>
-              </td>
-              <td class="text-center">
-                <a href="<?= base_url(); ?>AdminC/hapusPasien/<?= $p['id_pasien'] ?>" class="btn btn-danger btn-sm float-center" onclick="return confirm('Are you sure you want to delete this data?');" ?><img src="https://www.freeiconspng.com/uploads/trash-can-icon-24.png" width="20" alt="Icon Drawing Trash Can" /></a>
-                <a class="btn btn-success btn-sm float-center" href="<?= base_url(); ?>/AdminC/editPasien/<?= $p['id_pasien'] ?>"><img src="https://www.freeiconspng.com/uploads/edit-icon-3.png" width="20" alt="Free Edit Vector" /></a>
-              </td>
-          </tr><?php endforeach ?>
+        <tbody id="tbl_data" style="text-align: center">
+        
         </tbody>
       </table>
       <br><br>
     </div>
   </div>
 </center>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    tampil_data();
+    //Menampilkan Data di tabel
+    function tampil_data() {
+      $.ajax({
+        url: '<?php echo base_url(); ?>AdminC/ambilDataPasien',
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+          console.log(response);
+          var i;
+          var no = 0;
+          var html = "";
+          for (i = 0; i < response.length; i++) {
+            no++;
+            response[i].pass = response[i].password.substring(0, 6);
+            html = html + '<tr>' +
+              '<td>' + no + '</td>' +
+              '<td>' + response[i].firstname + '</td>' +
+              '<td>' + response[i].lastname + '</td>' +
+              '<td>' + response[i].email + '</td>' +
+              '<td>' + response[i].dob + '</td>' +
+              '<td>' + response[i].phone + '</td>' +
+              '<td>' + response[i].gender + '</td>' +
+              '<td>' + response[i].username + '</td>' +
+              '<td>' + response[i].pass + '</td>' +
+              '<td style="width: 16.66%;">' + '<span><a data-id="' + response[i].id_pasien + '" class="btn btn-success btn_edit" href="<?= base_url(); ?>AdminC/editPasien/' + response[i].id_pasien + '"><img src="https://www.freeiconspng.com/uploads/edit-icon-3.png" width="20" alt="Free Edit Vector" /></a><a style="margin-left: 5px;" data-id="' + response[i].id_pasien + '" class="btn btn-danger btn_hapus" href="<?= base_url(); ?>AdminC/hapusPasien/' + response[i].id_pasien + '"><img src="https://www.freeiconspng.com/uploads/trash-can-icon-24.png" width="20" alt="Icon Drawing Trash Can" /></a></span>' + '</td>' +
+              '</tr>';
+          }
+          $("#tbl_data").html(html);
+        }
+      });
+    }
+
+  });
+</script>

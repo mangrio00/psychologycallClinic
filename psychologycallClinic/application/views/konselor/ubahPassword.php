@@ -34,7 +34,7 @@
                                 <input type="password" class="form-control" id="newpass" placeholder="New Password" name="newpass">
                             </div>
                             <div class="footer">
-                                <a class="btn btn-warning" id="back" href="<?= base_url(); ?>PasienC/profilePasien/">Back To Your Account</a>
+                                <a class="btn btn-warning" id="back" href="<?= base_url(); ?>KonselorC/profileKonselor/">Back To Your Account</a>
                                 <input type="submit" class="btn btn-primary" id="add" value="Change Password">
                             </div>
                         </form>

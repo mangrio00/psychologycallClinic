@@ -23,13 +23,20 @@ class PasienC extends CI_Controller
         $data['pasien'] = $this->db->get_where('pasien', ['username' =>
         $this->session->userdata('username')])->row_array();
         $id_pasien = $this->session->userdata('id_pasien');
-        $data['reservasi'] = $this->Reserv_model->getResevByIdPasien($id_pasien);
         if ($this->input->post('keyword')) {
             $data['reservasi'] = $this->Reserv_model->cariDataReservbyId($id_pasien);
         }
         $this->load->view('template/headerPasien', $data);
         $this->load->view('pasien/pasienReservasi', $data);
         $this->load->view('template/footer');
+    }
+
+    function ambilDataReservasi()
+    {
+        $data['pasien'] = $this->db->get_where('pasien', ['username' =>
+        $this->session->userdata('username')])->row_array();
+        $data = $this->Reserv_model->getResevByIdPasien($data['pasien']['id_pasien']); // Menampung value return dari fungsi getData ke variabel data
+        echo json_encode($data); // Mengencode variabel data menjadi json format
     }
 
     public function profilePasien()
@@ -156,7 +163,7 @@ class PasienC extends CI_Controller
         $tgl = new DateTime($this->input->post('res_date'));
         $tglsekarang = new DateTime();
         if (($tglsekarang > $data['reservasi']['tgl_reserv']) && ($data['reservasi']['status'] == 'schedule')) {
-            $this->session->set_flashdata('flash', 'Can not be changed because reservation date has passed');
+            $this->session->set_flashdata('flash', 'Can not be changed because reservation date has passed or status is schedule');
             redirect('PasienC/');
         } else if (($this->form_validation->run() == false) || ($tgl < $tglsekarang)) {
             $this->load->view('template/headerPasien', $data);

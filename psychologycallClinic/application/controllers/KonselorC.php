@@ -23,13 +23,21 @@ class KonselorC extends CI_Controller
         $data['konselor'] = $this->db->get_where('konselor', ['username' =>
         $this->session->userdata('username')])->row_array();
         $id_konselor = $this->session->userdata('id_konselor');
-        $data['reservasi'] = $this->Reserv_model->getResevByIdKonselor($id_konselor);
+        // $this->Reserv_model->getResevByIdKonselor($id_konselor);
         if ($this->input->post('keyword')) {
             $data['reservasi'] = $this->Reserv_model->cariDataReserv();
         }
         $this->load->view('template/headerKonselor', $data);
         $this->load->view('konselor/konselorReservasi', $data);
         $this->load->view('template/footer');
+    }
+
+    function ambilDataReservasi()
+    {
+        $data['konselor'] = $this->db->get_where('konselor', ['username' =>
+        $this->session->userdata('username')])->row_array();
+        $data = $this->Reserv_model->getResevByIdKonselor($data['konselor']['id_konselor']); // Menampung value return dari fungsi getData ke variabel data
+        echo json_encode($data); // Mengencode variabel data menjadi json format
     }
 
     public function profileKonselor()

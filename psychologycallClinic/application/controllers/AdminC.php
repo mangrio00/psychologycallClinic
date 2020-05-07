@@ -17,10 +17,11 @@ class AdminC extends CI_Controller
         $this->load->model('Reserv_model');
         $this->load->library('form_validation');
     }
+
+
     public function adminPasien()
     {
         $data['title'] = 'Patient Data';
-        $data['pasien'] = $this->Pasien_model->get_pasien();
         if ($this->input->post('keyword')) {
             $data['pasien'] = $this->Pasien_model->cariDataPasien();
         }
@@ -29,10 +30,15 @@ class AdminC extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    function ambilDataPasien()
+    {
+        $data = $this->Pasien_model->get_pasien(); // Menampung value return dari fungsi getData ke variabel data
+        echo json_encode($data); // Mengencode variabel data menjadi json format
+    }
+
     public function adminKonselor()
     {
         $data['title'] = 'Counselor Data';
-        $data['konselor'] = $this->Konselor_model->get_konselor();
         if ($this->input->post('keyword')) {
             $data['konselor'] = $this->Konselor_model->cariDataKonselor();
         }
@@ -41,15 +47,27 @@ class AdminC extends CI_Controller
         $this->load->view('template/footer');
     }
 
+    function ambilDataKonselor()
+    {
+        $data = $this->Konselor_model->get_konselor(); // Menampung value return dari fungsi getData ke variabel data
+        echo json_encode($data); // Mengencode variabel data menjadi json format
+    }
+
     public function adminReservasi()
     {
         $data['title'] = 'Reservation Data';
-        $data['reservasi'] = $this->Reserv_model->getAllResev();
         if ($this->input->post('keyword')) {
             $data['reservasi'] = $this->Reserv_model->cariDataReserv();
         }
         $this->load->view('template/headerAdmin', $data);
         $this->load->view('admin/adminReservasi', $data);
+        echo json_encode($data);
+    }
+
+    function ambilDataReservasi()
+    {
+        $data = $this->Reserv_model->getAllResev(); // Menampung value return dari fungsi getData ke variabel data
+        echo json_encode($data); // Mengencode variabel data menjadi json format
     }
 
     public function tambahKonselor()
@@ -106,7 +124,6 @@ class AdminC extends CI_Controller
         $this->form_validation->set_rules('capacity', 'Capacity', 'required|trim');
 
         if ($this->form_validation->run() == false) {
-
             $this->load->view('template/headerAdmin', $data);
             $this->load->view('admin/editAdminKonselor', $data);
         } else {
@@ -119,6 +136,7 @@ class AdminC extends CI_Controller
                 'speciality' => $this->input->post('speciality'),
                 'capacity' => $this->input->post('capacity'),
             ];
+
             $this->Konselor_model->edit_konselor($id, $data);
             $this->session->set_flashdata('flash', 'Data Berhasil Diubah');
             redirect('AdminC/adminKonselor');

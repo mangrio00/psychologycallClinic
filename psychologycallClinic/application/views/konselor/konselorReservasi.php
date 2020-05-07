@@ -27,23 +27,44 @@
                         <td class="text-center" scope="col">Action </td>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr><?php
-                        $i = 1;
-                        foreach ($reservasi as $r) : ?>
-                            <td class="text-center"><?= $i++ ?></td>
-                            <td class="text-center"><?= $r['nama']; ?></td>
-                            <td class="text-center"><?= $r['tgl_reserv']; ?></td>
-                            <td class="text-center"><?= $r['nama_konselor']; ?></td>
-                            <td class="text-center"><?= $r['status']; ?></td>
-                            <td class="text-center">
-                                <a href="<?= base_url(); ?>KonselorC/ubah/<?= $r['id_reservasi'] ?>" class="badge badge-success float-center" ?>ubah</a>
-                            </td>
-                    </tr>
-                <?php endforeach ?>
+                <tbody id="tbl_data" style="text-align: center">
+
                 </tbody>
             </table>
             <br><br>
         </div>
     </div>
 </center>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        tampil_data();
+        //Menampilkan Data di tabel
+        function tampil_data() {
+            $.ajax({
+                url: '<?php echo base_url(); ?>KonselorC/ambilDataReservasi',
+                type: 'POST',
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response);
+                    var i;
+                    var no = 0;
+                    var html = "";
+                    for (i = 0; i < response.length; i++) {
+                        no++;
+                        html = html + '<tr>' +
+                            '<td>' + no + '</td>' +
+                            '<td>' + response[i].nama + '</td>' +
+                            '<td>' + response[i].tgl_reserv + '</td>' +
+                            '<td>' + response[i].nama_konselor + '</td>' +
+                            '<td>' + response[i].status + '</td>' +
+                            '<td style="width: 16.66%;">' + '<a data-id="' + response[i].id_reservasi + '" class="badge badge-success" href="<?= base_url(); ?>KonselorC/ubah/' + response[i].id_reservasi + '">Ubah</a>' + '</td>' +
+                            '</tr>';
+                    }
+                    $("#tbl_data").html(html);
+                }
+            });
+        }
+
+    });
+</script>

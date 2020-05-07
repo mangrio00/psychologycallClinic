@@ -95,7 +95,7 @@ class User extends CI_Controller
 				redirect('user/login');
 			}
 		} else if ($cekKonselor) {
-			if ($user['password'] == $cekKonselor['password']) {
+			if ((password_verify($user['password'], $cekKonselor['password'])) || ($user['password'] == $cekKonselor['password'])) {
 				$data = [
 					'username' => $cekKonselor['username'],
 					'id_level' => $cekKonselor['id_level'],
